@@ -1,0 +1,95 @@
+﻿- Alchemyst
+©2002 GerrW
+
+- Allan B. Liss
+©1992 Allan B. Liss
+
+- Antique Desk
+©2002 Gerry Wiseman
+
+- Bjorn Kallmark
+©2000 Björn Källmark
+http://www.sourcecode.se/sokoban
+
+- Desta
+©2010 Julius Faltus
+
+- Desta v2
+©2013 Julius Faltus
+
+- Diamond
+Linux KDE
+
+- Fanda and barrels v1
+©2013 Julius Faltus
+
+- Fanda and barrels v2
+©2013 Julius Faltus
+
+- Fred the Dung Beetle
+©1999 John Davis
+
+- Heavy Metal
+Gerry Wiseman
+
+- Mario v1
+Erim SEVER
+http://www.erimsever.com/sokoban.htm
+
+- Mario v2
+Dragan Eraković
+Graphics taken from http://www.mariowiki.com/Super_Paper_Mario
+
+- Mario v3
+Dragan Eraković
+
+- Metallica
+Gerald Wallace
+
+- Night Shift
+Gerry Wiseman
+
+- PacMan
+©1991 Jerry J. Shekhel
+Graphics from the game "Chomp for Windows", a PacMan clone.
+
+- Perfect Boy
+Andrey Molchanov a.k.a. -=*MAN-biker*=-
+box, wall and background created by Dragan Eraković
+
+- Poco
+Aquarelle
+iamuc internet design team
+
+- Santa
+Dragan Eraković
+
+- Skulloban
+@2002 GerrW
+
+- Soko P Girl
+Dragan Eraković
+
+- Soko P Man
+Dragan Eraković
+
+- SokoGems
+Gerry Wiseman
+
+- SokoMind
+©2000 Gerald Holler
+
+- Triangle
+©2000 iamuc internet design team
+
+- VisualSokoban
+©2000 Sylvain Gravejat
+©2000 Power Team
+Graphics taken from the game Duke Nukem 3D
+
+- Wintervorrat
+@2001 reino
+
+- Xsokoban
+XSokoban for Unix
+http://www.cs.cornell.edu/andru/xsokoban.html

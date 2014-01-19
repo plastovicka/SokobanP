@@ -1,0 +1,495 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winresrc.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Czech resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CSY)
+#ifdef _WIN32
+LANGUAGE LANG_CZECH, SUBLANG_DEFAULT
+#pragma code_page(1250)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+1                       ICON    DISCARDABLE     "MAN.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+10                      BITMAP  MOVEABLE PURE   "SOKOTOOL.BMP"
+11                      BITMAP  MOVEABLE PURE   "PLAYBTN.BMP"
+SKIN                    BITMAP  MOVEABLE PURE   "skin.BMP"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+3 ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "0",            210,                    VIRTKEY, NOINVERT
+    "1",            201,                    VIRTKEY, NOINVERT
+    "1",            116,                    VIRTKEY, CONTROL, NOINVERT
+    "2",            202,                    VIRTKEY, NOINVERT
+    "2",            117,                    VIRTKEY, CONTROL, NOINVERT
+    "3",            203,                    VIRTKEY, NOINVERT
+    "4",            204,                    VIRTKEY, NOINVERT
+    "5",            205,                    VIRTKEY, NOINVERT
+    "6",            206,                    VIRTKEY, NOINVERT
+    "7",            207,                    VIRTKEY, NOINVERT
+    "8",            208,                    VIRTKEY, NOINVERT
+    "9",            209,                    VIRTKEY, NOINVERT
+    "B",            404,                    VIRTKEY, NOINVERT
+    "E",            115,                    VIRTKEY, ALT, NOINVERT
+    "F",            217,                    VIRTKEY, NOINVERT
+    "G",            405,                    VIRTKEY, NOINVERT
+    "N",            401,                    VIRTKEY, NOINVERT
+    "P",            402,                    VIRTKEY, NOINVERT
+    "U",            211,                    VIRTKEY, NOINVERT
+    "U",            212,                    VIRTKEY, SHIFT, NOINVERT
+    "U",            214,                    VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "V",            402,                    VIRTKEY, NOINVERT
+    VK_BACK,        211,                    VIRTKEY, NOINVERT
+    VK_BACK,        213,                    VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        212,                    VIRTKEY, SHIFT, NOINVERT
+    VK_BACK,        214,                    VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    VK_DELETE,      211,                    VIRTKEY, NOINVERT
+    VK_DELETE,      213,                    VIRTKEY, CONTROL, NOINVERT
+    VK_END,         209,                    VIRTKEY, NOINVERT
+    VK_ESCAPE,      101,                    VIRTKEY, NOINVERT
+    VK_F1,          403,                    VIRTKEY, NOINVERT
+    VK_F12,         108,                    VIRTKEY, NOINVERT
+    VK_F2,          107,                    VIRTKEY, NOINVERT
+    VK_F3,          106,                    VIRTKEY, NOINVERT
+    VK_F4,          112,                    VIRTKEY, NOINVERT
+    VK_F5,          304,                    VIRTKEY, NOINVERT
+    VK_F6,          303,                    VIRTKEY, NOINVERT
+    VK_F7,          302,                    VIRTKEY, NOINVERT
+    VK_F8,          301,                    VIRTKEY, NOINVERT
+    VK_F9,          112,                    VIRTKEY, NOINVERT
+    VK_HOME,        201,                    VIRTKEY, NOINVERT
+    VK_INSERT,      212,                    VIRTKEY, NOINVERT
+    VK_INSERT,      214,                    VIRTKEY, CONTROL, NOINVERT
+    VK_NUMPAD0,     450,                    VIRTKEY, ALT, NOINVERT
+    VK_NUMPAD1,     451,                    VIRTKEY, ALT, NOINVERT
+    VK_NUMPAD2,     452,                    VIRTKEY, ALT, NOINVERT
+    VK_NUMPAD4,     454,                    VIRTKEY, ALT, NOINVERT
+    VK_SPACE,       403,                    VIRTKEY, NOINVERT
+    VK_TAB,         109,                    VIRTKEY, NOINVERT
+    "X",            212,                    VIRTKEY, NOINVERT
+    "X",            103,                    VIRTKEY, ALT, NOINVERT
+    "Z",            211,                    VIRTKEY, NOINVERT
+    "Z",            212,                    VIRTKEY, SHIFT, NOINVERT
+    "Z",            214,                    VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "^B",           404,                    ASCII,  NOINVERT
+    "^D",           408,                    ASCII,  NOINVERT
+    "^E",           114,                    ASCII,  NOINVERT
+    "^F",           217,                    ASCII,  NOINVERT
+    "^G",           405,                    ASCII,  NOINVERT
+    "\t",           407,                    ASCII,  NOINVERT
+    "^L",           111,                    ASCII,  NOINVERT
+    "^N",           401,                    ASCII,  NOINVERT
+    "^O",           104,                    ASCII,  NOINVERT
+    "^P",           402,                    ASCII,  NOINVERT
+    "^R",           404,                    ASCII,  NOINVERT
+    "^S",           110,                    ASCII,  NOINVERT
+    "^U",           213,                    ASCII,  NOINVERT
+    "^V",           402,                    ASCII,  NOINVERT
+    "^W",           406,                    ASCII,  NOINVERT
+    "^X",           214,                    ASCII,  NOINVERT
+    "^Z",           213,                    ASCII,  NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "&Game"
+    BEGIN
+        POPUP "&Language"
+        BEGIN
+            MENUITEM ".",                           29999
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Change player...\tTab",      109
+        MENUITEM "&Save solutions\tF12",        108
+        MENUITEM SEPARATOR
+        MENUITEM "Clea&r settings",             105
+        MENUITEM "&Options...\tCtrl+O",         104
+        MENUITEM SEPARATOR
+        MENUITEM "&Exit\tAlt+X",                103
+    END
+    POPUP "&Move"
+    BEGIN
+        MENUITEM "&Undo push\tZ",               211
+        MENUITEM "&Redo push\tX",               212
+        MENUITEM "U&ndo move\tCtrl+Z",          213
+        MENUITEM "R&edo move\tCtrl+X",          214
+        MENUITEM SEPARATOR
+        MENUITEM "Undo &all\tHome",             201
+        MENUITEM "Re&do all\tEnd",              209
+        MENUITEM "&Go to...\tF",                217
+        MENUITEM SEPARATOR
+        MENUITEM "&Play solution...\tF9",       112
+    END
+    POPUP "&Position"
+    BEGIN
+        MENUITEM "&Quick save\tCtrl+S",         110
+        MENUITEM "Quick &load\tCtrl+L",         111
+        MENUITEM SEPARATOR
+        MENUITEM "&Open...\tF3",                106
+        MENUITEM "&Save...\tF2",                107
+        MENUITEM SEPARATOR
+        MENUITEM "&Mirror left to right\tCtrl+1", 116
+        MENUITEM "Mirror &upside down\tCtrl+2", 117
+    END
+    POPUP "&Level"
+    BEGIN
+        MENUITEM "&Next\tN",                    401
+        MENUITEM "&Previous\tV",                402
+        MENUITEM ".",                           404
+        MENUITEM SEPARATOR
+        MENUITEM "&Go to...\tG",                405
+        MENUITEM "&List...\tF1",                403
+        MENUITEM SEPARATOR
+        MENUITEM ".",                           114
+        MENUITEM "Ne&w...\tAlt+E",              115
+        MENUITEM "&Delete\tCtrl+D",             408
+        MENUITEM "&Open...\tCtrl+I",            407
+        MENUITEM "&Save...\tCtrl+W",            406
+    END
+    POPUP "&Skin"
+    BEGIN
+        MENUITEM "&Next\tF7",                   302
+        MENUITEM "&Previous\tF6",               303
+        MENUITEM "&Open...\tF8",                301
+        MENUITEM "&Refresh\tF5",                304
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Contents",                   350
+        MENUITEM "&About...",                   100
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ABOUT DIALOG DISCARDABLE  52, 18, 113, 107
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 11, "MS Shell Dlg"
+BEGIN
+    PUSHBUTTON      "http://petr.lastovicka.sweb.cz",123,5,66,104,13
+    CTEXT           "(C) 2002-2013  Petr Lastovicka",501,4,50,105,10
+    RTEXT           "Version",503,30,25,30,9
+    CTEXT           "SokobanP",-1,36,6,40,9
+    ICON            1,-1,15,20,20,20
+    PUSHBUTTON      "OK",IDOK,40,86,32,14
+    ICON            1,-1,85,20,20,20
+    LTEXT           "",101,65,25,15,8
+END
+
+LEVEL DIALOG DISCARDABLE  4, 37, 284, 181
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Levels"
+FONT 10, "MS Shell Dlg"
+BEGIN
+    LISTBOX         101,2,16,279,146,LBS_OWNERDRAWFIXED | 
+                    LBS_WANTKEYBOARDINPUT | LBS_NODATA | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,90,165,35,14
+    PUSHBUTTON      "Cancel",IDCANCEL,162,165,34,14
+    CTEXT           "Solved",528,2,166,30,8
+    LTEXT           "88888",104,38,166,20,8
+END
+
+OPTIONS DIALOG DISCARDABLE  20, 21, 150, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    CONTROL         "",-1,"Static",SS_BLACKFRAME,3,3,142,52
+    LTEXT           "&Animation speed:",516,8,7,101,8
+    EDITTEXT        101,114,5,24,12
+    LTEXT           "&Playback speed:",517,8,24,101,8
+    EDITTEXT        102,114,22,24,12
+    LTEXT           "&Fast playback speed:",518,8,40,101,8
+    EDITTEXT        103,114,39,24,12
+    CONTROL         "",-1,"Static",SS_BLACKFRAME,3,56,142,51
+    CONTROL         "show &toolbar",511,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,61,130,12
+    CONTROL         "show &statusbar",512,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,76,130,12
+    CONTROL         "&center window",513,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,91,130,12
+    CONTROL         "",-1,"Static",SS_BLACKFRAME,3,108,142,32
+    CONTROL         "&hide walls",514,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    9,111,130,12
+    CONTROL         "&invisible objects",515,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,124,130,12
+    GROUPBOX        "After you finish level",559,3,149,142,56
+    CONTROL         "do &nothing",560,"Button",BS_AUTORADIOBUTTON,8,162,128,
+                    10
+    CONTROL         "go to &random level",561,"Button",BS_AUTORADIOBUTTON,8,
+                    175,128,10
+    CONTROL         "go to ne&xt unsolved level",562,"Button",
+                    BS_AUTORADIOBUTTON,8,188,128,10
+    DEFPUSHBUTTON   "OK",IDOK,23,211,41,14
+    PUSHBUTTON      "Cancel",IDCANCEL,82,212,41,14
+END
+
+GOTO DIALOG DISCARDABLE  18, 18, 110, 54
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Go to"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    CTEXT           "Level number:",520,5,13,60,10
+    EDITTEXT        101,72,11,25,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,11,34,41,14
+    PUSHBUTTON      "Cancel",IDCANCEL,61,34,41,14
+END
+
+SOLUTION DIALOG DISCARDABLE  21, 34, 111, 72
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Play solution"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    CONTROL         "the best solution",541,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,10,8,98,12
+    CONTROL         "your solution",542,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,10,28,98,12
+    DEFPUSHBUTTON   "OK",IDOK,10,52,38,14
+    PUSHBUTTON      "Cancel",IDCANCEL,61,52,38,14
+END
+
+AUTHOR DIALOG DISCARDABLE  18, 18, 142, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New level"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Author:",524,7,7,60,8
+    EDITTEXT        101,5,20,132,12,ES_AUTOHSCROLL
+    CONTROL         "",-1,"Static",SS_BLACKFRAME,15,39,111,45
+    CONTROL         "empty level",525,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,21,45,100,12
+    CONTROL         "clone current level",526,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,21,65,100,12
+    DEFPUSHBUTTON   "OK",IDOK,21,95,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,82,95,40,14
+END
+
+MOV DIALOG DISCARDABLE  18, 18, 103, 53
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Go to move"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    CTEXT           "Moves:",522,10,10,44,8
+    EDITTEXT        101,64,8,25,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,11,31,37,14
+    PUSHBUTTON      "Cancel",IDCANCEL,58,31,37,14
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""winresrc.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,2,1,0
+ PRODUCTVERSION 0,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040504b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", " \0"
+            VALUE "FileDescription", "SokobanP\0"
+            VALUE "FileVersion", "3.2\0"
+            VALUE "InternalName", "\0"
+            VALUE "LegalCopyright", "© 2003-2013  Petr Laštovièka\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "sokoban.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "\0"
+            VALUE "ProductVersion", "\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x405, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "ABOUT", DIALOG
+    BEGIN
+        BOTTOMMARGIN, 104
+    END
+
+    "OPTIONS", DIALOG
+    BEGIN
+        RIGHTMARGIN, 137
+        BOTTOMMARGIN, 229
+    END
+
+    "GOTO", DIALOG
+    BEGIN
+        RIGHTMARGIN, 105
+    END
+
+    "SOLUTION", DIALOG
+    BEGIN
+        RIGHTMARGIN, 99
+    END
+
+    "MOV", DIALOG
+    BEGIN
+        RIGHTMARGIN, 100
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    1201                    "Beginning"
+    1202                    "Rewind"
+    1203                    "Backward"
+    1204                    "Single step backward"
+    1205                    "Pause"
+    1206                    "Single step forward"
+    1207                    "Play"
+    1208                    "Fast forward"
+    1209                    "End"
+    1210                    "Exit playback"
+    1215                    "Undo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    1104                    "Options"
+    1106                    "Open position"
+    1107                    "Save position"
+    1109                    "Change player"
+    1112                    "Play solution"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    1216                    "Redo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    1401                    "Next level"
+    1402                    "Previous level"
+    1403                    "Open level"
+    1404                    "Reset level"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    1301                    "Open skin"
+    1302                    "Next skin"
+    1304                    "Reload skin"
+END
+
+#endif    // Czech resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

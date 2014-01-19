@@ -1,0 +1,174 @@
+501=(C) 2002-2013  Petr Laštovièka
+502=Tento program je freeware.
+503=Verze
+13=language\\CZ.chm
+
+11=O programu
+1=OK
+2=Storno
+
+510=Monosti
+511=zobrazit &panel nástrojù
+512=zobrazit sta&vovı øádek
+513=okno &umístit do støedu obrazovky
+514=&skrıt stìny
+515=neviditelné &bedny
+516=Rychlost &animace:
+517=Rychlost pøe&hrávání:
+518=&Zrychlené pøehrávání:
+559=Kdy dokonèíte místnost
+560=&nedìlat nic
+561=&jít do náhodnì zvolené místnosti
+562=jít do &další nevyøešené místnosti
+
+519=Jít do...
+520=Èíslo místnosti:
+
+521=Jít na tah
+522=Èíslo tahu:
+
+523=Nová místnost
+524=Vaše jméno:
+525=prázdná místnost
+526=kopie souèasné místnosti
+
+527=Vybrat místnost
+528=Vyøešeno
+530=
+531=Nejlepší øešení
+532=
+533=Vaše øešení
+534=Bedny
+535=Rozmìry
+536=Autor
+
+540=Pøehrát øešení
+541=nejlepší øešení
+542=vaše øešení
+
+;status
+550=Kroky:%d
+551=Pøesuny:%d
+
+;menu
+555=&Hotovo\tEnter
+556=Upr&avit\tCtrl+E
+557=&Zrušit zmìny\tEsc
+558=&Restart\tB
+
+600=&Hra
+601=&Jazyk
+602=&Tah
+603=&Pozice
+604=&Místnost
+605=&Vzhled
+606=&Nápovìda
+
+109=&Zmìnit hráèe...\tTab
+108=&Uloit øešení\tF12
+105=&Odstranit nastavení
+104=&Monosti...\tCtrl+O
+103=&Konec\tAlt+X
+211=&Zpìt pøesun\tZ
+212=&Vpøed pøesun\tX
+213=Z&pìt krok\tCtrl+Z
+214=Vpøed &krok\tCtrl+X
+201=Všech&no zpìt\tHome
+209=Všechno v&pøed\tEnd
+217=&Jít na...\tF
+112=Pø&ehrát øešení...\tF9
+110=&Zapamatovat\tCtrl+S
+111=O&bnovit\tCtrl+L
+106=&Otevøít...\tF3
+107=&Uloit...\tF2
+116=Pøevrátit &vodorovnì\tCtrl+1
+117=Pøevrátit &svisle\tCtrl+2
+401=&Další\tN
+402=&Pøedchozí\tV
+405=&Jít na...\tG
+403=&Seznam...\tF1
+115=&Nová...\tAlt+E
+408=S&mazat\tCtrl+D
+407=&Otevøít...\tCtrl+I
+406=&Uloit...\tCtrl+W
+302=&Další\tF7
+303=&Pøedchozí\tF6
+301=&Otevøít...\tF8
+304=O&bnovit\tF5
+350=&Obsah
+100=&O programu...
+
+;tooltip
+1215=Zpìt
+1201=Na zaèátek
+1202=Rychle vzad
+1203=Pøehrát pozpátku
+1204=Krok zpìt
+1205=Zastavit
+1206=Krok vpøed
+1207=Pøehrát
+1208=Rychle vpøed
+1209=Na konec
+1210=Ukonèit pøehrávaè
+1112=Pøehrát øešení
+1109=Zmìnit hráèe
+1104=Monosti
+1216=Vpøed
+1106=Otevøít pozici
+1403=Vybrat místnost
+1402=Pøedchozí místnost
+1401=Další místnost
+1404=Restart místnosti
+1301=Otevøít vzhled
+1302=Další vzhled
+1304=Obnovit vzhled
+1107=Uloit pozici
+
+500=Rastrové obrázky (*.bmp)\0*.bmp\0
+700=Nelze vytvoøit bitmapu pro vzhled
+701=Obrázek má chybné rozmìry
+702=Nelze naèíst BMP soubor
+730=Nelze otevøít soubor %s
+731=Chybnı formát souboru %s
+733=Nelze vytvoøit soubor %s
+734=Chyba pøi zápisu do %s
+735=Nelze uloit nastavení do registru
+736=Opravdu chcete smazat všechny konfiguraèní údaje ?
+739=Nenalezen soubor %s
+753=Soubor %s je moc dlouhı
+754=Chyba pøi ètení souboru %s
+755=Chyba v %s\nØádek %d nezaèíná èíslem
+756=Chyba v %s\nÈíslo %d je moc velké
+757=Chyba v %s\nVícenásobnı vıskyt %d
+768=Málo pamìti
+769=Chybná délka souboru
+
+800=U bylo provedeno pøíliš mnoho krokù
+801=Pozice Sokobana (*.sav)\0*.sav\0Všechny soubory\0*.*\0
+802=Øešení Sokobana (*.rec)\0*.rec\0Všechny soubory\0*.*\0
+803=Rastrové obrázky (*.bmp)\0*.bmp\0
+804=Databáze místností\0*.*\0
+805=Místnost Sokobana (*.xsb)\0*.xsb\0Textové soubory (*.txt)\0*.txt\0Všechny soubory\0*.*\0
+807=Tato místnost ještì nebyla vyøešena
+808=Není co obnovit
+809=Není co ukládat
+810=Pozice byla uloena v místnosti %d.\r\nChcete ji obnovit ?
+811=Øešení je chybné !
+812=Opravdu chcete tuto místnost odstranit z databáze ?
+813=Èlovìk se nemùe dostat k ádnému pøedmìtu
+814=Èlovìk se nemùe dostat k ádnému úloišti
+815=Chybná místnost
+816=Poèet pøedmìtù: %d\r\nPoèet  úloiš:     %d
+817=Místnost je prázdná
+818=Místnost je pøíliš velká
+819=V této místnosti chybí èlovìk
+820=V této místnosti jsou %d hráèi
+821=Nelze otevøít databázi levelù.\r\nChcete ji nalézt sami ?
+822=Databáze je prázdná
+823=%d øešení se nepodaøilo naèíst
+824=Na zaèátku souboru chybí èíslo místnosti
+825=Pozice je chybná
+826=Nejlepší øešení
+827=Gratuluji !
+828=Pøedchozí øešení: %d - %d\r\nNové  øešení:       %d -%d
+

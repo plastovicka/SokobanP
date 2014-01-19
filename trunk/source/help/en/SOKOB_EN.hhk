@@ -1,0 +1,88 @@
+<HTML>
+<!-- Sitemap 1.0 -->
+<OBJECT type="text/site properties">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="bitmap">
+		<param name="Name" value="Skins">
+		<param name="Local" value="html/skin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="BMP files">
+		<param name="Name" value="Skins">
+		<param name="Local" value="html/skin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="controls">
+		<param name="Name" value="Rules">
+		<param name="Local" value="html/rules.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="cursor keys">
+		<param name="Name" value="Rules">
+		<param name="Local" value="html/rules.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="database">
+		<param name="Name" value="Files desription">
+		<param name="Local" value="html/format.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="editor">
+		<param name="Name" value="Levels editor">
+		<param name="Local" value="html/editor.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="format">
+		<param name="Name" value="Files desription">
+		<param name="Local" value="html/format.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="level">
+		<param name="Name" value="Levels editor">
+		<param name="Local" value="html/editor.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="mouse">
+		<param name="Name" value="Rules">
+		<param name="Local" value="html/rules.htm">
+		<param name="Name" value="Levels editor">
+		<param name="Local" value="html/editor.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="painting">
+		<param name="Name" value="Skins">
+		<param name="Local" value="html/skin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="playback">
+		<param name="Name" value="Playback solutions">
+		<param name="Local" value="html/play.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="recorder">
+		<param name="Name" value="Playback solutions">
+		<param name="Local" value="html/play.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="rules">
+		<param name="Name" value="Rules">
+		<param name="Local" value="html/rules.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="skin">
+		<param name="Name" value="Skins">
+		<param name="Local" value="html/skin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="solutions">
+		<param name="Name" value="Playback solutions">
+		<param name="Local" value="html/play.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="symbols">
+		<param name="Name" value="Files desription">
+		<param name="Local" value="html/format.htm">
+		</OBJECT>
+</UL></HTML>
