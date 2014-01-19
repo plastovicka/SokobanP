@@ -1,0 +1,176 @@
+;T³umaczenie na jêzyk polski Zbyszek Kornas (ziko)
+
+501=(C) 2002-2013  Petr Laštovièka
+502=Ten program ma status freeware.
+503=Wersja
+
+11=O programie
+1=OK
+2=Anuluj
+
+510=Opcje
+511=Poka¿ pasek narzêdzi
+512=Pasek stanu
+513=Na œrodku ekranu
+514=Ukryj œciany
+515=Ukryj skrzynie
+516=Szybkoœæ animacji:
+517=Szybkoœæ odtwarzania:
+518=Szybkie odtwarzanie:
+
+519=IdŸ do...
+520=Numer planszy:
+
+521=IdŸ do
+522=Iloœæ posuniêæ:
+
+523=Nowa plansza
+524=Twoje imiê:
+525=Pusta plansza
+526=Kopia planszy
+
+527=Wybierz planszê
+528=Rozwi¹z.:
+530=Numer
+531=Najlepsze rozw.
+532=
+533=Twoje rozw.
+534=Skrzynie
+535=Rozmiar
+536=Autor/nazwa
+
+540=Odtwórz rozwi¹zanie
+541=Najlepsze rozwi¹zanie
+542=Twoje rozwi¹zanie
+
+;status
+550=Ruchy:%d
+551=Pchniêcia:%d
+
+;menu
+555=&Zakoñcz\tEnter
+556=&Edycja\tCtrl+E
+557=&Porzuæ edycjê\tEsc
+558=&Resetuj\tB
+
+600=&Gra
+601=&Jêzyk
+602=&Posuniêcia
+603=P&ozycja
+604=P&lansza
+605=&Skórka
+606=Po&moc
+
+109=&Zmiana gracza...\tTab
+108=Z&apisz rozwi¹zanie\tF12
+105=&Wyczyœæ ustawienia
+104=&Opcje...\tCtrl+O
+103=&Zakoñcz\tAlt+X
+
+211=&Cofnij pchniêcie\tZ
+212=&Powtórz pchniêcie\tX
+213=C&ofnij ruch\tCtrl+Z
+214=Pow&tórz ruch\tCtrl+X
+201=&Do pocz¹tku\tHome
+209=Na ko&niec\tEnd
+217=&IdŸ do ruchu...\tF
+112=Odtwórz &rozwi¹zanie...\tF9
+
+110=Szybki &zapis\tCtrl+S
+111=Szybkie &wczytanie\tCtrl+L
+106=&Otwórz...\tF3
+107=&Zapisz...\tF2
+116=Odbicie &lewa/prawa\tCtrl+1
+117=Odbicie &góra/dó³\tCtrl+2
+401=&Nastêpna\tN
+402=&Poprzednia\tV
+405=&Skocz do ...\tG
+403=&Lista plansz...\tF1
+115=&Nowa ...\tAlt+E
+408=&Usuñ\tCtrl+D
+407=&Otwórz plik xsb...\tCtrl+I
+406=&Zapisz jako xsb...\tCtrl+W
+
+302=&Nastêpna\tF7
+303=&Poprzednia\tF6
+301=&Otwórz...\tF8
+304=O&dœwie¿\tF5
+
+350=&Spis treœci
+100=&O programie...
+
+;tooltip
+1215=Cofnij ruchy
+1201=Na pocz¹tek
+1202=Szybke przewijanie wstecz
+1203=Odtwarzaj wstecz
+1204=Krok do ty³u
+1205=Zatrzymaj
+1206=Krok do przodu
+1207=Odtwarzaj
+1208=Szybkie odtwarzanie
+1209=Na koniec
+1210=Zakoñcz
+1112=Odtwórz rozwi¹zanie
+1109=Zmieñ gracza
+1104=Opcje
+1216=Powtórz ruchy
+1106=Wczytaj pozycjê
+1403=Wybierz planszê
+1402=Poprzednia plansza
+1401=Nastêpna plansza
+1404=Restart planszy
+1301=Wczytaj skórkê
+1302=Nastêpna skórka
+1304=Prze³aduj skórkê
+1107=Zapisz pozycjê
+
+500=Pliki bmp (*.bmp)\0*.bmp\0
+
+700=Nie mo¿na utworzyæ bitmapy
+701=Obraz ma niew³aœciwe rozmiary
+702=Nie mo¿na za³adowaæ pliku BMP
+730=Nie mo¿na otworzyæ pliku %s
+731=Nieprawid³owy format pliku %s
+733=Nie mo¿na zapisaæ do pliku %s
+734=B³¹d podczas zapisu do %s
+735=Nie mo¿na zapisaæ ustawieñ w Rejestrze
+736=Czy chcesz usun¹æ wszystkie dane konfiguracyjne?
+739=Nie mo¿na znaleŸæ pliku %s
+753=Plik %s jest za du¿y
+754=B³¹d odczytu pliku %s
+755=Error in %s\nLine %d
+756=Error in %s\nMessage number %d is too big
+757=Error in %s\nDuplicated number %d
+768=Za ma³o pamiêci
+769=Nieprawid³owa d³ugoœæ pliku
+
+800=Zbyt wiele posuniêæ
+801=Zapisana pozycja (*.sav)\0*.sav\0wszystkie pliki\0*.*\0
+802=Rozwi¹zania gracza (*.rec)\0*.rec\0Wszystkie pliki\0*.*\0
+803=Skórki (*.bmp)\0*.bmp\0
+804=Baza plansz\0*.*\0
+805=Plansze Sokobana (*.xsb)\0*.xsb\0Plik tekstowy (*.txt)\0*.txt\0Dowolny format\0*.*\0
+807=Plansza jest nierozwi¹zana
+808=Nie ma nic do przywrócenia
+809=Nie ma nic do zapisania
+810=Pozycja zosta³a zapisana jako %d.\r\nChcesz j¹ przywróciæ?
+811=Rozwi¹zanie jest nieprawid³owe!
+812=Naprawdê chcesz usun¹æ planszê z bazy danych?
+813=B³¹d planszy - izolowane skrzynie
+814=B³¹d planszy - izolowany magazyn
+815=Z³a plansza
+816=Iloœæ skrzyñ: %d\r\nRozmiar magazynu: %d
+817=Plansza jest pusta
+818=Rozmiar planszy jest zbyt du¿y
+819=Na tej planszy brakuje magazyniera
+820=Na tej planszy jest %d magazynierów
+821=Nie mo¿na znaleŸæ bazy danych.\r\nChcesz wyszukaæ samodzielnie ?
+822=Baza danych jest pusta
+823=Failed to read %d solution%s
+824=To nie jest prawid³owy numer planszy
+825=Pozycja jest nieprawid³owa
+826=Najlepsze rozwi¹zanie
+827=Gratulacje!
+828=Poprzednie rozwi¹zanie: %d - %d\r\nNowe rozwi¹zanie:       %d -%d
+

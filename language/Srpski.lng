@@ -1,0 +1,176 @@
+13=sokoban.chm
+
+;menu
+600=&Igra
+601=&Jezik
+109=&Promjeni igraèa...\tTab
+108=&Saèuvaj rešenje\tF12
+105=Obriš&i podešavanja
+104=&Opcije...\tCtrl+O
+103=&Izlaz\tAlt+X
+
+602=&Pokreti
+211=&Prije poteza\tZ
+212=&Posle poteza\tX
+213=P&rije pokreta\tCtrl+Z
+214=P&osle pokreta\tCtrl+X
+201=Prije &svega\tHome
+209=Po&sle svega\tEnd
+217=&Idi na...\tF
+112=&Prikaži rešenje...\tF9
+
+603=&Pozicija
+110=&Zapamti\tCtrl+S
+111=Otvori &zapamæeno\tCtrl+L
+106=&Otvori...\tF3
+107=&Saèuvaj...\tF2
+116=&Ogledalo s´ljeva na desno\tCtrl+1
+117=Ogledalo &odozgo na dolje\tCtrl+2
+
+604=&Nivo
+401=&Sledeæi\tN
+402=&Predhodni\tV
+405=&Idi na...\tG
+403=&Lista...\tF1
+115=Nov&i...\tAlt+E
+408=&Izbriši\tCtrl+D
+407=&Otvori...\tCtrl+I
+406=&Saèuvaj...\tCtrl+W
+
+555=Završen&o\tEnter
+556=&Izmjeni nivo\tCtrl+E
+557=&Odustani od izmjene\tEsc
+558=&Resetuj\tB
+
+605=&Izgled
+302=&Sledeæe\tF7
+303=&Prethodno\tF6
+301=&Otvori...\tF8
+304=&Osvježi\tF5
+
+606=&Pomoæ
+350=&Sadržaj
+100=&O programu...
+
+;dialog boxes
+11=O Programu
+503=Verzija
+502=Ovaj program je besplatan!
+1=U redu
+2=Odustani
+
+527=Nivoi
+528=Rješeni
+
+510=Opcije
+511=prikaži traku sa a&latima
+512=&prikaži traku statistike
+513=&centriraj prozor
+514=sakrij &zidove
+515=nevidljivi &objekti
+516=Brzina &animacije:
+517=&Brzina snimka:
+518=Brzina &kratkog prikaza:
+559=Nakon što završite nivo
+560=ne &radi ništa
+561=&idi na nasumièni nivo
+562=idi na &sledeæi nerješeni nivo
+
+519=Idi na
+520=Broj nivoa:
+
+540=Prikaži rešenje
+541=najbolje rešenje
+542=tvoje rešenje
+
+523=Novi nivo
+524=Autor:
+525=prazan nivo
+526=iskopiraj trenutni nivo
+
+521=Idi na pokret
+522=Pokreti:
+
+530=Nivo
+531=Najbolje rešenje
+533=Tvoje rešenje
+534=Objekti
+535=Dimenzije
+536=Autor
+
+;status
+550=Pokreta:%d
+551=Pomeranja:%d
+
+801=Saèuvane pozicije (*.sav)\0*.sav\0All files\0*.*\0
+802=Rešenja igraèa (*.rec)\0*.rec\0All files\0*.*\0
+803=Skinovi(izgled) (*.bmp)\0*.bmp\0
+804=Baza podataka za nivoe\0*.*\0
+805=Sokoban nivoi (*.xsb)\0*.xsb\0Text files (*.txt)\0*.txt\0All files\0*.*\0
+
+;error messages
+700=Nemože se kreirati bitmap za skin
+701=Pogešna velièina  bitmap-a 
+702=Nemože se uèitati BMP fajl
+735=Nemože se upisati u  Windows registar
+800=Previše pokreta
+807=Ovaj nivo nije rješen
+808=Nema nièega za uèitavanje
+810=Pozicija je saèuvana na nivou %d.\r\nDali želite da je povratite ?
+811=Pogrešna solucija !
+736=Dali želite da obrišete vaša podešavanja ?
+755=Greška u %s\nLinija %d
+756=Greška u %s\nPoruka broj %d je prevelik fajl
+757=Greška u %s\nDuplicated number %d
+753=Fajl %s je predugaèak
+734=Greška u pisanju, fajl %s
+769=Neispravna dužina fajla
+733=Onemoguæen upis fajla %d
+768=Nema dovoljno memorije
+812=Dali stvarno želite da uklonite ovaj nivo iz baze podataka ?
+813=Èovjek nemože da doðe do objekta
+814=Èovjek nemože da doðe do cilja
+815=Neispravna tabla
+816=Objekti: %d\r\nCiljevi: %d\r\n
+817=Nivo je prazan
+818=Nivo je prevelik
+819=Nema èovjeka na ovom nivou
+820=Na ovom nivou su %d èovjeka
+730=Nemože se otvoriti fajl %s
+821=Nemogu se otvoritipodatci nivoa.\r\nDali želite da ih pronaðete ?
+754=Greška uèitavanja na %s
+822=Baza podataka je prazna
+823=Neuspješno uèitavanje %d rešenja%s
+824=Nema broja nivoa
+825=Pozicija je pogrešna
+809=Nema ništa za pamæenje
+
+826=Rezultati
+827=Èestitamo !
+828=Prethodno rešenje: %d - %d\r\nNovo rešenje:       %d - %d\r\n
+
+;toolbar buttons
+1201=Poèetak
+1202=Premotavanje unapred
+1203=Premotavanje unazad
+1204=Jedan korak unazad
+1205=Pauza
+1206=Jedan korak unaprijed
+1207=Pusti
+1208=Brzo premotavanje
+1209=Kraj
+1210=Izaði iz snimaka
+1215=Prethodno
+1104=Opcije
+1106=Otvori poziciju
+1107=Zapamti poziciju
+1109=Promijena igraèa
+1112=Odigraj rešenje
+1216=Povratiti
+1401=Sledeæi nivo
+1402=Prethodni nivo
+1403=Otvori nivo
+1404=Resetuj nivo
+1301=Otvori skin
+1302=Sledeæi skin
+1304=Ponovo uèitaj skin

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Pravidla">
+		<param name="Local" value="html\rules.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Zm&igrave;na vzhledu">
+		<param name="Local" value="html\skin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="P&oslash;ehr&aacute;v&aacute;n&iacute; &oslash;ešen&iacute;">
+		<param name="Local" value="html\play.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Editor m&iacute;stnost&iacute;">
+		<param name="Local" value="html\editor.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Form&aacute;ty soubor&ugrave;">
+		<param name="Local" value="html\format.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Co je nového">
+		<param name="Local" value="html\history.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

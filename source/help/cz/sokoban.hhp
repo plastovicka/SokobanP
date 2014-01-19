@@ -1,0 +1,24 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=..\..\..\language\CZ.chm
+Contents file=toc.hhc
+Default Window=w1
+Default topic=html\rules.htm
+Display compile progress=No
+Index file=sokob_cz.hhk
+Language=0x405 Èeština (Èeská republika)
+
+[WINDOWS]
+w1=,"toc.hhc","sokob_cz.hhk","html\rules.htm",,,,,,0x42120,160,0x3006,[0,197,600,684],,,,,,,0
+
+
+[FILES]
+html\rules.htm
+html\skin.htm
+html\play.htm
+html\editor.htm
+html\format.htm
+html\history.htm
+
+[INFOTYPES]
+

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Skins</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="skin">
+	<PARAM NAME="Keyword" VALUE="BMP files">
+	<PARAM NAME="Keyword" VALUE="painting">
+	<PARAM NAME="Keyword" VALUE="bitmap">
+</OBJECT>
+
+<P><A NAME="skin"></A><B>Skins</B> </P>
+
+<P>If you want to change the skin, use commands in menu skin. Each skin is saved in  one BMP file. You can cycle all skins from the same directory by commands <I>Next</I> or <I>Previous</I>. The name of the skin is shown in the window title and it disappears after few seconds.</P>
+
+<P>You can make your own skin. You need some bitmap editor. (You can use Paintbrush from Windows accessories.) </P>
+
+<P>The picture must consist of squares in this order:
+
+<OL>
+<LI><U>ground</U> - an empty square</LI>
+<LI><U>object</U> - a thing to push</LI>
+<LI><U>selected object</U> - object hilighted by mouse click</LI>
+<LI><U>store</U> - target square where a man should push the objects</LI>
+<LI><U>object on store</U> - optional</LI>
+<LI><U>selected object on store</U> - optional</LI>
+<LI><U>background</U> - pattern for area around the level</LI>
+<LI><U>man</U> - player</LI>
+<LI><U>wall</U></LI>
+</OL>
+
+<P>Squares for objects, selected objects and men are transparent bitmaps. Transparents colors are determined by the pixels in upper left corners of these squares.</P>
+
+<P>You can create four squares for a <U>man</U> for directions left, right, up, down. </P>
+
+<P>You can create five squares for a <U>wall</U> if you want adjacent walls to be connected. They must be placed in the picture in this order:
+
+<OL>
+	<LI>without border - wall is surrounded by eight walls</LI>
+	<LI>with border - wall is isolated, there are empty squares around this wall</LI>
+	<LI>with corners -wall is connected with four other walls</LI>
+	<LI>up and down border - wall adjoins with other walls at left and right side</LI>
+	<LI>left and right border - wall adjoins with other walls at up and down side</LI>
+</OL>
+
+<P>There are eight types of skins:
+<UL>
+	<LI> 7 squares - 1x man, 1x wall</LI>
+	<LI> 9 squares - 1x man, 1x wall, 2x object on store</LI>
+	<LI>10 squares - 4x man, 1x wall</LI>
+	<LI>11 squares - 1x man, 5x wall</LI>
+	<LI>12 squares - 4x man, 1x wall, 2x object on store</LI>
+	<LI>13 squares - 1x man, 5x wall, 2x object on store</LI>
+	<LI>14 squares - 4x man, 5x wall</LI>
+	<LI>16 squares - 4x man, 5x wall, 2x object on store</LI>
+</UL>
+
+<P>The height of the picture must be same as height of one square. The width of the picture must be equal to the width of one square multiplied by number of squa res (which depends on skin type).</P>
+
+<P>When you change the skin and <I>save</I> BMP file into skins folder, you can <I>refresh</I> the skin in Sokoban’s window.</P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,83 @@
+<HTML>
+<!-- Sitemap 1.0 -->
+<OBJECT type="text/site properties">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="bmp soubory">
+		<param name="Name" value="Zmìna vzhledu">
+		<param name="Local" value="html/skin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="databáze">
+		<param name="Name" value="Formáty souboru">
+		<param name="Local" value="html/format.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="editor">
+		<param name="Name" value="Editor místností">
+		<param name="Local" value="html/editor.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="formát">
+		<param name="Name" value="Formáty souboru">
+		<param name="Local" value="html/format.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="kurzory">
+		<param name="Name" value="Pravidla">
+		<param name="Local" value="html/rules.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="malování">
+		<param name="Name" value="Zmìna vzhledu">
+		<param name="Local" value="html/skin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="myš">
+		<param name="Name" value="Pravidla">
+		<param name="Local" value="html/rules.htm">
+		<param name="Name" value="Editor místností">
+		<param name="Local" value="html/editor.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="místnost">
+		<param name="Name" value="Editor místností">
+		<param name="Local" value="html/editor.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="ovládání">
+		<param name="Name" value="Pravidla">
+		<param name="Local" value="html/rules.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="pravidla">
+		<param name="Name" value="Pravidla">
+		<param name="Local" value="html/rules.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="pøehrávaè">
+		<param name="Name" value="Pøehrávání øešení">
+		<param name="Local" value="html/play.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="skin">
+		<param name="Name" value="Zmìna vzhledu">
+		<param name="Local" value="html/skin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="symboly">
+		<param name="Name" value="Formáty souboru">
+		<param name="Local" value="html/format.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="vzhled">
+		<param name="Name" value="Zmìna vzhledu">
+		<param name="Local" value="html/skin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Keyword" value="øešení">
+		<param name="Name" value="Pøehrávání øešení">
+		<param name="Local" value="html/play.htm">
+		</OBJECT>
+</UL></HTML>

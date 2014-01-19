@@ -1,0 +1,23 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=..\..\..\sokoban.chm
+Contents file=toc.hhc
+Default Window=w1
+Default topic=html\rules.htm
+Display compile progress=No
+Index file=SOKOB_EN.hhk
+Language=0x409 Angliètina (Spojené státy)
+
+[WINDOWS]
+w1=,"toc.hhc","SOKOB_EN.hhk","html\rules.htm",,,,,,0x42120,150,0x3006,[0,197,600,684],,,,,,,0
+
+
+[FILES]
+html\rules.htm
+html\skin.htm
+html\play.htm
+html\editor.htm
+html\format.htm
+
+[INFOTYPES]
+

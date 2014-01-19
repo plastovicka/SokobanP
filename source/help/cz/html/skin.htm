@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1250">
+<TITLE>Změna vzhledu</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="skin">
+	<PARAM NAME="Keyword" VALUE="vzhled">
+	<PARAM NAME="Keyword" VALUE="bmp soubory">
+	<PARAM NAME="Keyword" VALUE="malování">
+</OBJECT>
+
+<P><A NAME="skin"></A><B>Změna</B> <B>vzhledu</B></P>
+
+<P>Každý vzhled je uložen v&nbsp;jednom BMP souboru. Pomocí kláves F6, F7 nebo povelů <I>další</I>, <I>předchozí</I> z&nbsp;menu <I>Vzhled</I> si můžete postupně vyzkoušet všechny vzhledy, které jsou uloženy na disku ve stejném adresáři. </P>
+
+<P>Pokud si chcete vytvořit svůj vlastní vzhled, potřebujete k&nbsp;tomu nějaký editor obrázků. K&nbsp;tomuto účelu by vám měl stačit program Malování z&nbsp;příslušenství Windows. Obrázek musí obsahovat vedle sebe ve správném pořadí tato políčka:
+
+<OL>
+<LI>podlaha - prázdné políčko</LI>
+<LI>bedna - předmět, který má hráč přesouvat</LI>
+<LI>označená bedna - bedna vybraná myší</LI>
+<LI>úložiště - cílové políčko, kam se mají přesunout bedny</LI>
+<LI>bedna na úložišti- nepovinné</LI>
+<LI>označená bedna na úložišti- nepovinné</LI>
+<LI>pozadí - vzorek pro vyplnění oblasti okolo hrací plochy</LI>
+<LI>člověk - postava, kterou hráč ovládá</LI>
+<LI>zeď</LI>
+</OL>
+<P>Políčka pro bednu, označenou bednu a člověka jsou transparentní. To znamená, že prostor kolem bedny nebo člověka musí být celý vyplněn stejnou barvou. Tuto průhlednou barvu musejí mít také body v&nbsp;levých horních rozích těchto políček.
+
+<P>Vzhled nemusí obsahovat bednu na úložišti a označenou bednu na úložišti.
+
+<P>Pokud chcete, aby byl člověk jinak natočen podle toho, kterým směrem se právě pohybuje, pak pro něj vytvořte čtyři políčka v&nbsp;tomto pořadí: vlevo, vpravo, nahoru, dolů. 
+
+<P>Aby se sousedící zdi mohly na sebe správně napojit, je třeba vytvořit pro zeď pět políček v&nbsp;tomto pořadí: 
+<OL>
+	<LI>bez okrajů - zeď je obklopena ze všech osmi stran jinou zdí</LI>
+
+	<LI>s&nbsp;okraji na všech stranách - zeď je izolovaná, všude okolo jsou prázdná políčka</LI>
+
+	<LI>s&nbsp;okraji v&nbsp;rozích - zeď sousedí se čtyřmi zdmi, v&nbsp;rozích sousedí s&nbsp;prázdnými políčky</LI>
+
+	<LI>okraj nahoře a dole - zeď sousedí s&nbsp;jinou zdí vlevo a vpravo</LI>
+
+	<LI>okraj vlevo a vpravo - zeď sousedí s&nbsp;jinou zdí nahoře a dole</LI>
+</OL>
+<P>Jsou možné tyto typy vzhledů:
+<UL>
+	<LI> 7 políček - 1x člověk, 1x zeď</LI>
+	<LI> 9 políček - 1x člověk, 1x zeď, 2x bedna na úložišti</LI>
+	<LI>10 políček - 4x člověk, 1x zeď</LI>
+	<LI>11 políček - 1x člověk, 5x zeď</LI>
+	<LI>12 políček - 4x člověk, 1x zeď, 2x bedna na úložišti</LI>
+	<LI>13 políček - 1x člověk, 5x zeď, 2x bedna na úložišti</LI>
+	<LI>14 políček - 4x člověk, 5x zeď</LI>
+	<LI>16 políček - 4x člověk, 5x zeď, 2x bedna na úložišti</LI>
+</UL>
+<P>Program určí typ podle šířky obrázku. Jestliže použijete políčka, která nejsou čtvercová, pak se občas může stát, že typ nebude určen správně. V&nbsp;takovém případě musíte použít typ s větším počtem políček.</P>
+
+<P>Velikost políček může být prakticky libovolná. Optimální velikost je zhruba 30x30 bodů.</P> 
+
+<P>Ve chvíli, kdy ukládáte soubor v&nbsp;editoru obrázků, pak v&nbsp;Sokobanovi proveďte příkaz <I>obnovit vzhled</I>.</P> 
+
+</BODY>
+</HTML>

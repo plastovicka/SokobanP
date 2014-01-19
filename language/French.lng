@@ -1,0 +1,172 @@
+13=sokoban.chm
+
+;menu
+600=&Jeu
+601=&Langue
+109=&Changer joueur...\tTab
+108=&Sauvegarder solutions\tF12
+105=Supprimer préférences
+104=&Options...\tCtrl+O
+103=&Exit\tAlt+X
+
+602=&Mouvements
+211=&Défaire poussée\tZ
+212=&Refaire poussée\tX
+213=Défaire mouvement\tCtrl+Z
+214=Refaire mouvement\tCtrl+X
+201=Défaire tout\tHome
+209=Refaire tout\tEnd
+217=&Aller à...\tF
+112=&Jouer la solution...\tF9
+
+603=&Position
+110=&Sauvegarde rapide\tCtrl+S
+111=Chargement rapide\tCtrl+L
+106=&Ouvrir...\tF3
+107=&Sauvegarder...\tF2
+116=&Mirroir gauche droite\tCtrl+1
+117=Mirroir &hauts bas\tCtrl+2
+
+604=&Niveau
+401=&Suivant\tN
+402=&Précédent\tV
+405=&Aller à...\tG
+403=&Liste...\tF1
+115=Nouveau...\tAlt+E
+408=&Supprimer\tCtrl+D
+407=&Ouvrir...\tCtrl+I
+406=&Sauvegarder...\tCtrl+W
+
+555=Faire\tEntrée
+556=&Editer\tCtrl+E
+557=&Annuler editeur\tEsc
+558=&Reset\tB
+
+605=&Skin
+302=&Suivant\tF7
+303=&Précédent\tF6
+301=&Ouvrir...\tF8
+304=&Raffraichir\tF5
+
+606=&Aide
+350=&Contenu
+100=&A propos...
+
+;dialog boxes
+11=A propos
+503=Version
+502=Ce programme est un freeware.
+1=OK
+2=Annulé
+
+527=Niveaux
+528=Résolus
+
+510=Options
+511=Montrer barre des tâches
+512=Montrer statut
+513=centrer la fenêtre
+514=Cacher murs
+515=objets invisibles
+516=Vitesse d'animation:
+517=Vitesse du playback:
+518=Vitesse du playback rapide:
+
+519=Aller à
+520=Niveau numéro:
+
+540=Jouer la solution
+541=la meilleur solution
+542=ta solution
+
+523=Nouveau niveau
+524=Auteur:
+525=niveau vide
+526=copier le niveau actuel
+
+521=Aller au mouvement
+522=Mouvements:
+
+530=Niveau
+531=Meilleure solution
+533=Ta solution
+534=Objets
+535=Dimension
+536=Auteur
+
+;status
+550=Mouvements:%d
+551=Poussées:%d
+
+801=Positions sauvegardée (*.sav)\0*.sav\0All files\0*.*\0
+802=Solutions du joueur (*.rec)\0*.rec\0All files\0*.*\0
+803=Skins (*.bmp)\0*.bmp\0
+804=Niveau database\0*.*\0
+805=Sokoban Niveau (*.xsb)\0*.xsb\0Text files (*.txt)\0*.txt\0All files\0*.*\0
+
+;error messages
+700=Impossible de créer bitmap pour le skin
+701=largeur bitmap non valide
+702=Impossible de charger le fichier BMP
+735=Impossible d'écrire dans le registre windows
+800=trop de mouvements
+807=Ce niveau n'a pas été résolu
+808=Rien à charger
+810=La position a été sauvée dans le niveau%d.\r\nVeux-tula restaurer ?
+811=La solution est mauvaise!
+736=Veux-tu supprimer tes préférences ?
+755=Erreur dans %s\nLine %d
+756=Erreur dans %s\nMessage nombre %d est trop gros
+757=Erreur dans %s\nDuplicated nombre %d
+753=Le fichier %s est trop long
+734=Erreur d'écriture fichier %s
+769=Longueur de fichier non valide
+733=Impossible d'écrire dans le fichier %d
+768=Pas assez de mémoire
+812=Veux-tu vraiment supprimer ce niveau de la base de donnée ?
+813=L'homme ne peut pas arriver aux objets
+814=L'homme ne peut pas arriver à la cible
+815=Tableau non valide
+816=Objets: %d\r\nCibles: %d\r\n
+817=Le niveau est vide
+818=Le niveau est trop gros
+819=Il n'y a pas de personnage dans ce niveau
+820=Il y a %d hommes dans ce niveau
+730=Impossible d'ouvrir le fichier %s
+821=Impossible d'ouvrir la base de donnée niveaux.\r\nVeux-tu la retrouver ?
+754=Erreur de lecture dans %s
+822=La base de donnée est vide
+823=Echec de lecture %d solution%s
+824=Il n'y a pas de numéro de niveau
+825=La position est mauvaise
+809=Rien à sauvegarder
+
+826=meilleurs scores
+827=Félicitations !
+828=Solution précédente: %d - %d\r\nSolution suivante:       %d - %d\r\n
+
+;boutons barre des tâches
+1201=Début
+1202=Retour rapide
+1203=Retour
+1204=Retour pas à pas
+1205=Pause
+1206=Avance pas à pas
+1207=Jouer
+1208=Avance rapide
+1209=Fin
+1210=Soritr du playback
+1215=Défaire
+1104=Options
+1106=Ouvrir position
+1107=Sauvegarder position
+1109=Changer joueur
+1112=Jouer la solution
+1216=Refaire
+1401=Niveau suivant
+1402=Niveau précédent
+1403=Ouvrir niveau
+1404=Reset niveau
+1301=Ouvrir skin
+1302=Skin suivant
+1304=Recharger skin

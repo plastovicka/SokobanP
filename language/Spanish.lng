@@ -1,0 +1,170 @@
+;menu
+600=&Juego
+601=&Idioma
+109=&Cambiar jugador...\tTab
+108=&Guardar soluciones\tF12
+105=&Borrar preferencias
+104=&Preferencias...\tCtrl+O
+103=&Salir\tAlt+X
+
+602=&Movimientos
+211=&Deshacer empujes\tZ
+212=&Rehacer empujes\tX
+213=&Deshacer movimientos\tCtrl+Z
+214=&Rehacer movimientos\tCtrl+X
+201=&Deshacer todo\tHome
+209=&Rehacer todo\tEnd
+217=&Ir a...\tF
+112=&Reproducir solución...\tF9
+
+603=&Posiciones
+110=&Guardar rápido\tCtrl+S
+111=&Carga rápida\tCtrl+L
+106=&Abrir...\tF3
+107=&Guardar...\tF2
+116=&Inversión horizontal\tCtrl+1
+117=&Inversión vertical\tCtrl+2
+
+604=&Nivel
+401=&Siguiente\tN
+402=&Anterior\tV
+405=&Ir a...\tG
+403=&Lista...\tF1
+115=&Nuevo...\tAlt+E
+408=&Borrar\tCtrl+D
+407=&Abrir...\tCtrl+I
+406=&Guardar...\tCtrl+W
+
+555=&Hecho\tEnter
+556=&Editar\tCtrl+E
+557=&Cancelar edición\tEsc
+558=&Restablecer\tB
+
+605=&Apariencia
+302=&Siguiente\tF7
+303=&Anterior\tF6
+301=&Abrir...\tF8
+304=&Actualizar\tF5
+
+606=&Ayuda
+350=&Contenido
+100=&Acerca de...
+
+;dialog boxes
+11=Acerca de...
+503=Versión
+502=Este programa es freeware.
+1=OK
+2=Cancelar
+
+527=Niveles
+528=Resueltos
+
+510=Preferencias
+511=mostrar barra herramientas
+512=mostrar barra de estado
+513=centrar ventana
+514=ocultar paredes
+515=objetos invisibles
+516=Velocidad animación:
+517=Velocidad reproducción:
+518=Velocidad reproducción rápida:
+
+519=Ir a
+520=Nivel número:
+
+540=Reproducir solución
+541=la mejor solución
+542=tu solución
+
+523=Nuevo nivel
+524=Autor:
+525=nivel vacío
+526=duplicar nivel actual
+
+521=Ir al movimiento
+522=Movimientos:
+
+530=Nivel
+531=Mejor solución
+533=Tu solución
+534=Objetos
+535=Dimensiones
+536=Autor
+
+;status
+550=Movimien.:%d
+551=Empujes:%d
+
+801=Posiciones guardadas (*.sav)\0*.sav\0Todos los archivos\0*.*\0
+802=Soluciones jugadores (*.rec)\0*.rec\0Todos los archivos\0*.*\0
+803=Apariencias (*.bmp)\0*.bmp\0
+804=Base de datos de niveles\0*.*\0
+805=Sokoban niveles (*.xsb)\0*.xsb\0Archivos de texto (*.txt)\0*.txt\0Todos los archivos\0*.*\0
+
+;error messages
+700=No se pueden crear apariencias con mapas de bits
+701=Ancho de mapa de bits inválido
+702=No se puede cargar el archivo BMP
+735=No se puede escribir en el registro de Windows
+800=Demasiados movimientos
+807=Este nivel no ha sido resuelto
+808=No hay nada cargado
+810=Esta posición ha sido guardada en el nivel %d.\r\n¿Quieres restaurarla?
+811=Solución incorrecta!
+736=¿Quieres borrar las preferencias?
+755=Error en %s\nLínea %d
+756=Error en %s\nMensaje número %d es demasiado grande
+757=Error en %s\nNúmero duplicado %d
+753=Archivo %s es demasiado extenso
+734=Error de escritura, archivo %s
+769=Archivo de extensión inválida
+733=No se puede escribir en el archivo %d
+768=No hay suficiente memoria
+812=¿Estás seguro que quieres eliminar este nivel de la base de datos?
+813=El jugador no puede llegar a los objetos
+814=El jugador no puede llegar a los objetivos
+815=Tablero inválido
+816=Objectos: %d\r\nObjetivos: %d\r\n
+817=El nivel está vacío
+818=El nivel es demasiado grande
+819=No hay ningún jugador en este nivel
+820=Hay %d jugadores en este nivel
+730=No se puede abrir el archivo %s
+821=No se pueden abrir los niveles de la base de datos.\r\n¿Quieres buscarlo?
+754=Error de lectura en %s
+822=La base de datos está vacía
+823=No se pudo leer %d solución%s
+824=Este no es el número de nivel
+825=Posición errónea
+809=No hay nada guardado
+
+826=Ranking
+827=Felicidades!
+828=Solución anterior: %d - %d\r\nNueva solución:       %d - %d\r\n
+
+;toolbar buttons
+1201=Principio
+1202=Rebobinar
+1203=Hacia atrás
+1204=Un paso hacia atrás
+1205=Pausa
+1206=Un paso hacia adelante
+1207=Reproducir
+1208=Avance rápido
+1209=Final
+1210=Salir de la reproducción
+1215=Deshacer
+1104=Preferencias
+1106=Abrir posición
+1107=Guardar posición
+1109=Cambiar jugador
+1112=Reproducir solución
+1216=Rehacer
+1401=Nivel siguiente
+1402=Nivel anterior
+1403=Abrir nivel
+1404=Restablecer nivel
+1301=Abrir apariencia
+1302=Apariencia siguiente
+1304=Actualizar apariencia

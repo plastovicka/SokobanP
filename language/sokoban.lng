@@ -1,0 +1,176 @@
+13=sokoban.chm
+
+;menu
+600=&Game
+601=&Language
+109=&Change player...\tTab
+108=&Save solutions\tF12
+105=Clea&r settings
+104=&Options...\tCtrl+O
+103=&Exit\tAlt+X
+
+602=&Move
+211=&Undo push\tZ
+212=&Redo push\tX
+213=U&ndo move\tCtrl+Z
+214=R&edo move\tCtrl+X
+201=Undo &all\tHome
+209=Re&do all\tEnd
+217=&Go to...\tF
+112=&Play solution...\tF9
+
+603=&Position
+110=&Quick save\tCtrl+S
+111=Quick &load\tCtrl+L
+106=&Open...\tF3
+107=&Save...\tF2
+116=&Mirror left to right\tCtrl+1
+117=Mirror &upside down\tCtrl+2
+
+604=&Level
+401=&Next\tN
+402=&Previous\tV
+405=&Go to...\tG
+403=&List...\tF1
+115=Ne&w...\tAlt+E
+408=&Delete\tCtrl+D
+407=&Open...\tCtrl+I
+406=&Save...\tCtrl+W
+
+555=Don&e\tEnter
+556=&Edit\tCtrl+E
+557=&Cancel edit\tEsc
+558=&Reset\tB
+
+605=&Skin
+302=&Next\tF7
+303=&Previous\tF6
+301=&Open...\tF8
+304=&Refresh\tF5
+
+606=&Help
+350=&Contents
+100=&About...
+
+;dialog boxes
+11=About
+503=Version
+502=This program is freeware.
+1=OK
+2=Cancel
+
+527=Levels
+528=Solved
+
+510=Options
+511=show &toolbar
+512=show &statusbar
+513=&center window
+514=&hide walls
+515=&invisible objects
+516=&Animation speed:
+517=&Playback speed:
+518=&Fast playback speed:
+559=After you finish level
+560=do &nothing
+561=go to &random level
+562=go to ne&xt unsolved level
+
+519=Go to
+520=Level number:
+
+540=Play solution
+541=the best solution
+542=your solution
+
+523=New level
+524=Author:
+525=empty level
+526=clone current level
+
+521=Go to move
+522=Moves:
+
+530=Level
+531=Best solution
+533=Your solution
+534=Objects
+535=Dimension
+536=Author
+
+;status
+550=Moves:%d
+551=Pushes:%d
+
+801=Saved positions (*.sav)\0*.sav\0All files\0*.*\0
+802=Player's solutions (*.rec)\0*.rec\0All files\0*.*\0
+803=Skins (*.bmp)\0*.bmp\0
+804=Levels database\0*.*\0
+805=Sokoban levels (*.xsb)\0*.xsb\0Text files (*.txt)\0*.txt\0All files\0*.*\0
+
+;error messages
+700=Cannot create bitmap for skin
+701=Invalid bitmap width
+702=Cannot load BMP file
+735=Cannot write to Windows registry
+800=Too many moves
+807=This level has not been solved
+808=Nothing to load
+810=Position has been saved in level %d.\r\nDo you want to restore it ?
+811=Solution is wrong !
+736=Do you want to delete your settings ?
+755=Error in %s\nLine %d
+756=Error in %s\nMessage number %d is too big
+757=Error in %s\nDuplicated number %d
+753=File %s is too long
+734=Write error, file %s
+769=Invalid file length
+733=Cannot write to file %d
+768=Not enough memory
+812=Do you really want to remove this level from database ?
+813=Man cannot get to objects
+814=Man cannot get to targets
+815=Invalid board
+816=Objects: %d\r\nTargets: %d\r\n
+817=Level is empty
+818=Level is too big
+819=There is no man in this level
+820=There are %d men in this level
+730=Cannot open file %s
+821=Cannot open levels database.\r\nDo you want to find it ?
+754=Read error in %s
+822=Database is empty
+823=Failed to read %d solution%s
+824=There is no level number
+825=Position is wrong
+809=Nothing to save
+
+826=Hiscore
+827=Congratulations !
+828=Previous solution: %d - %d\r\nNew solution:       %d - %d\r\n
+
+;toolbar buttons
+1201=Beginning
+1202=Rewind
+1203=Backward
+1204=Single step backward
+1205=Pause
+1206=Single step forward
+1207=Play
+1208=Fast forward
+1209=End
+1210=Exit playback
+1215=Undo
+1104=Options
+1106=Open position
+1107=Save position
+1109=Change player
+1112=Play solution
+1216=Redo
+1401=Next level
+1402=Previous level
+1403=Open level
+1404=Reset level
+1301=Open skin
+1302=Next skin
+1304=Reload skin
