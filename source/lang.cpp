@@ -290,14 +290,19 @@ void initLang()
 {
 	scanLangDir();
 	if(!lang[0]){
-		//language auto detection
-		strcpy(lang, "English");
-		WORD id= (WORD)PRIMARYLANGID(GetUserDefaultLangID());
-		if(id==0x05) strcpy(lang, "Èesky");
-		if(id==0x0C) strcpy(lang, "French");
-		if(id==0x0a) strcpy(lang, "Spanish");
-		if(id==0x15) strcpy(lang, "Polski");
-		if(id==0x1a) strcpy(lang, "Srpski");
+		//language detection
+		const char* s;
+		switch(PRIMARYLANGID(GetUserDefaultLangID()))
+		{
+			case LANG_CZECH: s="Èesky"; break;
+			case LANG_FRENCH: s="French"; break;
+			case LANG_SPANISH: s= "Spanish"; break;
+			case LANG_POLISH: s="Polski"; break;
+			case LANG_SERBIAN: s= "Srpski"; break;
+			case LANG_ITALIAN: s= "Italiano"; break;
+			default: s="English"; break;
+		}
+		strcpy(lang, s);
 	}
 	loadLang();
 }

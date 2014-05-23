@@ -1,0 +1,176 @@
+13=language\\IT.chm
+
+;menu
+600=&Gioco
+601=&Lingua
+109=&Cambia giocatore...\tTab
+108=&Salva soluzione\tF12
+105=Cancell&a impostazioni
+104=&Opzioni...\tCtrl+O
+103=&Esci\tAlt+X
+
+602=&Sposta
+211=&Annulla spinta\tZ
+212=&Ripeti spinta\tX
+213=A&nnulla mossa\tCtrl+Z
+214=R&ipeti mossa\tCtrl+X
+201=Annulla &tutto\tHome
+209=Ri&peti tutto\tEnd
+217=&Vai a...\tF
+112=&Gioca soluzione...\tF9
+
+603=&Posizione
+110=&Salvataggio rapido\tCtrl+S
+111=Caricamento &rapido\tCtrl+L
+106=&Apri...\tF3
+107=&Salva...\tF2
+116=&Capovolgi orizzontale\tCtrl+1
+117=Capovolgi &verticale\tCtrl+2
+
+604=&Livello
+401=&Successivo\tN
+402=&Precedente\tV
+405=&Vai a...\tG
+403=&Lista...\tF1
+115=Nu&ovo...\tAlt+E
+408=&Elimina\tCtrl+D
+407=&Apri...\tCtrl+I
+406=&Salva...\tCtrl+W
+
+555=Fin&e\tEnter
+556=&Modifica\tCtrl+E
+557=&Annulla modifica\tEsc
+558=&Ripristina\tB
+
+605=&Skin
+302=&Successiva\tF7
+303=&Precedente\tF6
+301=&Apri...\tF8
+304=&Aggiorna\tF5
+
+606=&Aiuto
+350=&Guida
+100=&Info...
+
+;dialog boxes
+11=Info
+503=Versione
+502=Questo programma è gratuito.
+1=OK
+2=Annulla
+
+527=Livelli
+528=Risolti
+
+510=Opzioni
+511=mostra &barra strumenti
+512=mostra &barra di stato
+513=&centra finestra
+514=&nascondi i muri
+515=&oggetti invisibili
+516=&Velocità animazione:
+517=&Velocità riproduzione:
+518=&Velocità riproduzione rapida:
+559=Dopo aver completato il livello
+560=non fare &nulla
+561=vai ad un livello casuale
+562=vai al livello successivo irrisolto
+
+519=Vai a
+520=Numero livello:
+
+540=Gioca soluzione
+541=soluzione migliore
+542=la tua soluzione
+
+523=Nuovo livello
+524=Autore:
+525=livello vuoto
+526=clona livello attuale
+
+521=Vai alla mossa
+522=Mosse:
+
+530=Livello
+531=Soluzione migliore
+533=La tua soluzione
+534=Oggetti
+535=Dimensione
+536=Autore
+
+;status
+550=Mosse:%d
+551=Spinte:%d
+
+801=Posizioni salvate (*.sav)\0*.sav\0Tutti i file\0*.*\0
+802=Soluzioni giocatori (*.rec)\0*.rec\0Tutti i file\0*.*\0
+803=Skins (*.bmp)\0*.bmp\0
+804=Database livelli\0*.*\0
+805=Livelli Sokoban (*.xsb)\0*.xsb\0File di testo (*.txt)\0*.txt\0Tutti i file\0*.*\0
+
+;error messages
+700=Impossibile creare bitmap per la skin
+701=Larghezza bitmap non valida
+702=Impossibile caricare il file BMP
+735=Impossibile scrivere il Registro di sistema
+800=Troppe mosse
+807=Questo livello non è stato risolto
+808=Nulla da caricare
+810=La posizione è stata salvata nel livello %d.\r\nVuoi ripristinarla ?
+811=Soluzione sbagliata !
+736=Vuoi eliminare le impostazioni ?
+755=Errore in %s\nRiga %d
+756=Errore in %s\nNumero messaggio %d è troppo grande
+757=Errore in %s\nNumero duplicato %d
+753=Il file %s è troppo lungo
+734=Errore scrittura file %s
+769=Lunghezza file non valida
+733=Impossibile scrivere il file %d
+768=Memoria insufficiente
+812=Vuoi veramente rimuovere questo livello dal database ?
+813=L'uomo non può arrivare agli oggetti
+814=L'uomo non può arrivare alle destinazioni
+815=Bordo non valido
+816=Oggetti: %d\r\nDestinazioni: %d\r\n
+817=Il livello è vuoto
+818=Il livello è troppo grande
+819=Non c'e l'uomo in questo livello
+820=Ci sono %d uomini in questo livello
+730=Impossibile aprire il file %s
+821=Impossibile aprire i livelli del database.\r\nVuoi trovarli ?
+754=Errore lettura in %s
+822=Il database è vuoto
+823=Impossibile leggere %d soluzione%s
+824=Non c'è nessun numero di livello
+825=La posizione è sbagliata
+809=Nulla da salvare
+
+826=Punteggio migliore
+827=Congratulazioni !
+828=Soluzione precedente: %d - %d\r\nNuova soluzione:       %d - %d\r\n
+
+;toolbar buttons
+1201=Inizio
+1202=Riavvolgi
+1203=Indietro
+1204=Passo singolo all'indietro
+1205=Pausa
+1206=Passo singolo in avanti
+1207=Gioca
+1208=Avanti veloce
+1209=Fine
+1210=Chiudi riproduzione
+1215=Annulla
+1104=Opzioni
+1106=Apri posizione
+1107=Salva posizione
+1109=Cambia giocatore
+1112=Gioca soluzione
+1216=Ripeti
+1401=Livello successivo
+1402=Livello precedente
+1403=Apri livello
+1404=Ripristina livello
+1301=Apri skin
+1302=Skin successiva
+1304=Ricarica skin

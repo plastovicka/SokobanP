@@ -1,0 +1,26 @@
+<html><object type="text/site properties"><param name="SiteType" value="index"></object><ul>    <LI> <OBJECT type="text/sitemap">
+      <param name="Keyword" value="Page 1">
+      <param name="Name" value="Page 1">
+      <param name="Local" value="Socoban/page_1.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Keyword" value="Page 2">
+      <param name="Name" value="Page 2">
+      <param name="Local" value="Socoban/page_2.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Keyword" value="Page 3">
+      <param name="Name" value="Page 3">
+      <param name="Local" value="Socoban/page_3.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Keyword" value="Page 4">
+      <param name="Name" value="Page 4">
+      <param name="Local" value="Socoban/page_4.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Keyword" value="Page 5">
+      <param name="Name" value="Page 5">
+      <param name="Local" value="Socoban/page_5.htm">
+      </OBJECT>
+</ul></html>
