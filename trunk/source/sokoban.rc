@@ -353,7 +353,7 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,2,1,0
+ FILEVERSION 3,2,1,1
  PRODUCTVERSION 0,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
@@ -374,7 +374,7 @@ BEGIN
             VALUE "FileDescription", "SokobanP\0"
             VALUE "FileVersion", "3.2\0"
             VALUE "InternalName", "\0"
-            VALUE "LegalCopyright", "© 2003-2013  Petr Laštovièka\0"
+            VALUE "LegalCopyright", "© 2003-2014  Petr Laštovièka\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "sokoban.exe\0"
             VALUE "PrivateBuild", "\0"
