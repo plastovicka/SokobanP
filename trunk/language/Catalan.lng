@@ -1,0 +1,174 @@
+;menu
+600=&joc
+601=&Llenguatge
+109=&Canviar jugador...\tTab
+108=&Guardar solucions\tF12
+105=Esbor&rar configuració
+104=&Opcions...\tCtrl+O
+103=&Exit\tAlt+X
+
+602=&Moure
+211=&Desfer empènyer\tZ
+212=&Redo empènyer\tX
+213=Desfer Moure\tCtrl+Z
+214=R&efer Moure\tCtrl+X
+201=Desfer &tot\tHome
+209=Re&do tot\tFinal
+217=&Anar a...\tF
+112=&Solució del joc...\tF9
+
+603=&Posició
+110=&Guardar Ràpid\tCtrl+S
+111=&carregar Ràpid\tCtrl+L
+106=&Obrir...\tF3
+107=&Guardar...\tF2
+116=&Capgirar esquerra i dreta\tCtrl+1
+117=Capgirar adalt i abaix\tCtrl+2
+
+604=&Nivell
+401=&Proper\tN
+402=&Anterior\tV
+405=&Anar a...\tG
+403=&Llista...\tF1
+115=No&u...\tAlt+E
+408=&Delete\tCtrl+D
+407=&Obrir...\tCtrl+I
+406=&Guardar...\tCtrl+W
+
+555=Fe&t\tEntrar
+556=&Editar\tCtrl+E
+557=&Cancel Editar\tEsc
+558=&Reset\tB
+
+605=&Skin
+302=&Proper\tF7
+303=&Anterior\tF6
+301=&Obrir...\tF8
+304=&Refrescar\tF5
+
+606=&Ajuda
+350=&Contingut
+100=&Sobre...
+
+;Caixes de diàleg
+11=Sobre
+503=Versió
+502=Aquest programa és freeware.
+1=OK
+2=Cancel·lar
+
+527=Nivells
+528=Solucionat
+
+510=Opcions
+511=mostrar &barra d'eines
+512=mostrar &barra d'estat
+513=&centrar finestra
+514=&amagar murs
+515=&objectes invisibles
+516=&velocitat d'animació:
+517=&velocitat de reproducció:
+518=&velocitat de reproducció ràpida:
+559=Després de què acabis el Nivell
+560=fer &res
+561=Anar a Nivell &aleatori 
+562=Anar al proper Nivell sense resoldre
+
+519=Anar a
+520=Nivell número:
+
+540=Play solució
+541=la millor solució
+542=la teva solució
+
+523=Nou Nivell
+524=Author:
+525=Nivell buit
+526=clonar el Nivell actual
+
+521=Anar a moviment
+522=Moviments:
+
+530=Nivell
+531=Millor solució
+533=la teva solució
+534=Objectes
+535=Dimensions
+536=Autor
+
+;status
+550=Mogudes:%d
+551=Empènyer:%d
+
+801=Posicions Guardades (*.sav)\0*.sav\0All el fitxers\0*.*\0
+802=solucions del jugador(*.rec)\0*.rec\0All el fitxers\0*.*\0
+803=Skins (*.bmp)\0*.bmp\0
+804=base de dades de Nivells\0*.*\0
+805=Nivells Sokoban (*.xsb)\0*.xsb\0fitxers de texte (*.txt)\0*.txt\0tots els fitxers\0*.*\0
+
+;missatges d'error
+700=no es pot crear el bitmap per a l'skin
+701=amplada del bitmap no vàlida
+702=no es pot carregar BMP el fitxer
+735=no es pot escriure al registre de Windows
+800=Massa moviments
+807=aquest Nivell no ha estat Solucionat
+808=res per a carregar
+810=la Posició s'ha guardat al Nivell %d.\r\nVols restarurar-la ?
+811=solució esta malament !
+736=Vols esborrar la teva configuració ?
+755=Error a la %s\nLinia %d
+756=Error a %s\nMissatge número %d és massa gran
+757=Error al %s\número duplicat%d
+753=el fitxer %s és massa llarg
+734=error d'escriptura, al fitxer %s
+769=longitud invàlida del fitxer
+733=no es pot escriure al fitxer %d
+768=No hi ha prou memòria
+812=Realment vols esborrar aquest nivell de la base de dades ?
+813=L'home no pot aconseguir els objectes
+814=L'home no pot aconseguir els objectius
+815=tauler invàlid 
+816=objectes: %d\r\nObjectius: %d\r\n
+817=El nivell està buit
+818=El nivell és massa gran
+819=No hi ha cap home en aquest nivell
+820=Hi ha %d homes en aquest nivell
+730=no es pot Obrir el fitxer %s
+821=no es pot Obrir els nivells a la base de dades.\r\nEls vols trobar ?
+754=Error de lectura a %s
+822=la base de dades està buida
+823=Falla al llegir la %d solució%s
+824=No hi ha nivell número
+825=Posició està malament
+809=res per a Guardar
+
+826=Puntuació més alta
+827=Felicitats !
+828=Anterior solució: %d - %d\r\nNova solució:       %d - %d\r\n
+
+;botons de la barra d'eines
+1201=Començament
+1202=Rebobinar
+1203=Cap enrera
+1204=Tirar un pas enrera
+1205=Pausa
+1206=Tirar un pas endavant
+1207=Reproduir
+1208=Tirar ràpid endavant
+1209=Final
+1210=Sortir de la reproducció
+1215=Desfer
+1104=Opcions
+1106=Obrir Posició
+1107=Guardar Posició
+1109=Canviar jugador
+1112=Reproduir solució
+1216=Refer
+1401=Proper Nivell
+1402=Anterior Nivell
+1403=Obrir Nivell
+1404=Reset Nivell
+1301=Obrir skin
+1302=Proper skin
+1304=Recarregar skin
