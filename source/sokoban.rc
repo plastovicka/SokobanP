@@ -210,7 +210,7 @@ CAPTION "About"
 FONT 11, "MS Shell Dlg"
 BEGIN
     PUSHBUTTON      "http://petr.lastovicka.sweb.cz",123,5,66,104,13
-    CTEXT           "(C) 2002-2013  Petr Lastovicka",501,4,50,105,10
+    CTEXT           "(C) 2002-2014  Petr Lastovicka",501,4,50,105,10
     RTEXT           "Version",503,30,25,30,9
     CTEXT           "SokobanP",-1,36,6,40,9
     ICON            1,-1,15,20,20,20
@@ -353,7 +353,7 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,2,1,1
+ FILEVERSION 3,2,2,0
  PRODUCTVERSION 0,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
