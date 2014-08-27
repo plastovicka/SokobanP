@@ -128,37 +128,37 @@ fnsave,
 char *title="SokobanP", *editTitle="SokobanP - Editor", *solverTitle="SokobanP - solver";
 const char *subkey="Software\\Petr Lastovicka\\sokoban";
 struct Treg { char *s; int *i; } regVal[]={
-	{"level", &level},
-	{"toolVis", &toolBarVisible},
-	{"statusVis", &statusBarVisible},
-	{"moveDelay", &moveDelay},
-	{"fastTimer", &fastTimer},
-	{"playTimer", &playTimer},
-	{"center", &center},
-	{"nowalls", &nowalls},
-	{"noobjects", &noobjects},
-	{"noselect", &noselected},
-	{"gratul", &gratulOn},
-	{"levDlgX", &levDlgX},
-	{"levDlgY", &levDlgY},
-	{"levDlgW", &levDlgW},
-	{"levDlgH", &levDlgH},
-	{"colLev", &colWidth[0]},
-	{"colBest", &colWidth[1]},
-	{"colUser", &colWidth[3]},
-	{"colObj", &colWidth[4]},
-	{"colDim", &colWidth[5]},
-	{"colAuth", &colWidth[6]},
-	{"nextAction", &nextAction},
+		{"level", &level},
+		{"toolVis", &toolBarVisible},
+		{"statusVis", &statusBarVisible},
+		{"moveDelay", &moveDelay},
+		{"fastTimer", &fastTimer},
+		{"playTimer", &playTimer},
+		{"center", &center},
+		{"nowalls", &nowalls},
+		{"noobjects", &noobjects},
+		{"noselect", &noselected},
+		{"gratul", &gratulOn},
+		{"levDlgX", &levDlgX},
+		{"levDlgY", &levDlgY},
+		{"levDlgW", &levDlgW},
+		{"levDlgH", &levDlgH},
+		{"colLev", &colWidth[0]},
+		{"colBest", &colWidth[1]},
+		{"colUser", &colWidth[3]},
+		{"colObj", &colWidth[4]},
+		{"colDim", &colWidth[5]},
+		{"colAuth", &colWidth[6]},
+		{"nextAction", &nextAction},
 };
 struct Tregs { char *s; char *i; DWORD n; bool isPath; } regValS[]={
-	{"skin", fnskin, sizeof(fnskin), 1},
-	{"save", fnsave, sizeof(fnsave), 1},
-	{"data", fndata, sizeof(fndata), 1},
-	{"user", fnuser, sizeof(fnuser), 1},
-	{"author", curAuthor, sizeof(curAuthor), 0},
-	{"extLevel", fnlevel, sizeof(fnlevel), 1},
-	{"language", lang, sizeof(lang), 0},
+		{"skin", fnskin, sizeof(fnskin), 1},
+		{"save", fnsave, sizeof(fnsave), 1},
+		{"data", fndata, sizeof(fndata), 1},
+		{"user", fnuser, sizeof(fnuser), 1},
+		{"author", curAuthor, sizeof(curAuthor), 0},
+		{"extLevel", fnlevel, sizeof(fnlevel), 1},
+		{"language", lang, sizeof(lang), 0},
 };
 
 OPENFILENAME savOfn={
@@ -256,15 +256,19 @@ void Sleep2(int ms)
 	}
 }
 
+typedef WINUSERAPI BOOL(WINAPI *pIsHungAppWindow)(HWND hwnd);
+pIsHungAppWindow isHungAppWindow;
+
 //pause while during player movement
 void sleep()
 {
-	if(notdraw) return;
-	if(!replay){
-		MSG mesg;
-		if(PeekMessage(&mesg, NULL, WM_TIMER, WM_TIMER, PM_REMOVE)){
-			DispatchMessage(&mesg);
-		}
+	MSG mesg;
+	if(notdraw || isHungAppWindow && isHungAppWindow(hWin) &&
+		(PeekMessage(&mesg, NULL, WM_LBUTTONDOWN, WM_LBUTTONDOWN, PM_NOREMOVE)
+		|| PeekMessage(&mesg, NULL, WM_NCLBUTTONDOWN, WM_NCLBUTTONDOWN, PM_NOREMOVE))) 
+		return;
+	if(!replay && PeekMessage(&mesg, NULL, WM_TIMER, WM_TIMER, PM_REMOVE)){
+		DispatchMessage(&mesg);
 	}
 	aminmax(moveDelay, 0, 500);
 	Sleep2(moveDelay);
@@ -570,8 +574,8 @@ void squareMask(HDC srcDC, int destI, int srcI, int srcG)
 
 	for(x=0; x<bfW; x++)
 		for(y=0; y<bfH; y++){
-			COLORREF c= GetPixel(srcDC, x+srcI, y);
-			if(c!=transp) SetPixel(bmpdc, x+destI, y+bfH, c);
+		COLORREF c= GetPixel(srcDC, x+srcI, y);
+		if(c!=transp) SetPixel(bmpdc, x+destI, y+bfH, c);
 		}
 }
 //---------------------------------------------------------------------------
@@ -1712,14 +1716,14 @@ void langChanged()
 BOOL CALLBACK OptionsProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM)
 {
 	static struct{ int *prom, id; } D[]={
-		{&moveDelay, 101},
-		{&playTimer, 102},
-		{&fastTimer, 103},
-		{&toolBarVisible, 511},
-		{&statusBarVisible, 512},
-		{&center, 513},
-		{&nowalls, 514},
-		{&noobjects, 515},
+			{&moveDelay, 101},
+			{&playTimer, 102},
+			{&fastTimer, 103},
+			{&toolBarVisible, 511},
+			{&statusBarVisible, 512},
+			{&center, 513},
+			{&nowalls, 514},
+			{&noobjects, 515},
 	};
 	int i;
 
@@ -1947,6 +1951,8 @@ void sortList()
 }
 
 //---------------------------------------------------------------------------
+static bool helpVisible;
+
 void showHelp()
 {
 	char buf[MAX_PATH], buf2[MAX_PATH+24];
@@ -1955,7 +1961,7 @@ void showHelp()
 	//if ZIP file has been extracted by Explorer, CHM has internet zone identifier which must be deleted before displaying help
 	sprintf(buf2, "%s:Zone.Identifier:$DATA", buf);
 	DeleteFile(buf2); //delete only alternate data stream
-	HtmlHelp(hWin, buf, 0, 0);
+	if(HtmlHelp(hWin, buf, 0, 0)) helpVisible=true;
 }
 
 //---------------------------------------------------------------------------
@@ -2855,35 +2861,35 @@ int pascal WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR, int cmdShow)
 	MSG mesg;
 	static int parts[]={35, 90, 90, 75, 60, 40, -1};
 	static TBBUTTON tbb[]={
-		{0, 106, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{1, 107, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{10, 104, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{12, 109, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{0, 0, 0, TBSTYLE_SEP, {0}, 0},
-		{5, 215, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{4, 216, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{13, 112, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{0, 0, 0, TBSTYLE_SEP, {0}, 0},
-		{2, 402, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{3, 401, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{11, 403, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{7, 404, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{0, 0, 0, TBSTYLE_SEP, {0}, 0},
-		{9, 302, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{8, 301, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{6, 304, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{0, 106, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{1, 107, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{10, 104, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{12, 109, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{0, 0, 0, TBSTYLE_SEP, {0}, 0},
+			{5, 215, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{4, 216, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{13, 112, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{0, 0, 0, TBSTYLE_SEP, {0}, 0},
+			{2, 402, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{3, 401, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{11, 403, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{7, 404, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{0, 0, 0, TBSTYLE_SEP, {0}, 0},
+			{9, 302, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{8, 301, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{6, 304, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
 	};
 	static TBBUTTON tbbP[]={
-		{0, 201, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{1, 202, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{2, 203, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{3, 204, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{4, 205, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{5, 206, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{6, 207, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{7, 208, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{8, 209, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
-		{9, 210, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{0, 201, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{1, 202, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{2, 203, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{3, 204, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{4, 205, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{5, 206, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{6, 207, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{7, 208, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{8, 209, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
+			{9, 210, TBSTATE_ENABLED, TBSTYLE_BUTTON, {0}, 0},
 	};
 
 	inst=hInstance;
@@ -2915,6 +2921,7 @@ int pascal WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR, int cmdShow)
 	wc.lpszClassName= "SokobanWCLS";
 	if(!hPrevInst && !RegisterClass(&wc)) return 1;
 	msgD("class");
+	isHungAppWindow = (pIsHungAppWindow)GetProcAddress(GetModuleHandle("user32.dll"), "IsHungAppWindow");
 
 	hWin = CreateWindow("SokobanWCLS", title,
 		WS_OVERLAPPEDWINDOW-WS_THICKFRAME,
@@ -2992,6 +2999,9 @@ int pascal WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR, int cmdShow)
 	delete[] levoff;
 	delete[] levels;
 	delete[] user;
+
+	//HtmlHelp bug workaround, process freezes in itss.dll CITUnknown::CloseActiveObjects() if help is visible and user closes both windows from the taskbar
+	if(helpVisible) Sleep(600);
 	return 0;
 }
 //---------------------------------------------------------------------------
