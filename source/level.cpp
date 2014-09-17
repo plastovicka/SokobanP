@@ -408,7 +408,7 @@ int rdLevel1(Pchar buf, int border, Level *lev)
 	else{
 		getDim(buf, w, y);
 	}
-	if(!w || !y){
+	if(w<3 || y<3){
 		msg(lng(817, "Level is empty"));
 		return 10;
 	}
@@ -818,85 +818,122 @@ int readSolutionFast(Pchar psol, Solution *sol)
 }
 //---------------------------------------------------------------------------
 //open XSB file
-bool openLevel()
+int openLevel(char* fileName, bool load)
 {
-	bool result=false;
+	int err=-1;
 
-	if(openFileDlg(&levelOfn)){
-		FILE *f= fopen(fnlevel, "r");
-		if(!f){
-			msg(lng(730, "Cannot open file %s"), fnlevel);
-		}
-		else{
-			int len=fsize(f);
-			if(len){
-				Pchar buf= new char[len];
-				if(!buf){
-					msg(lng(768, "Not enough memory"));
+	FILE *f= fopen(fileName, "r");
+	if(!f){
+		msg(lng(730, "Cannot open file %s"), fileName);
+	}
+	else{
+		int len=fsize(f);
+		if(len){
+			Pchar buf= new char[len];
+			if(!buf){
+				msg(lng(768, "Not enough memory"));
+			}
+			else{
+				if(!editing){
+					addLevel();
 				}
-				else{
-					if(!editing){
-						addLevel();
-					}
-					Pchar s=buf;
-					int ch;
-					for(;;){
+
+				//skip text at the beginning of file
+				int ch;
+				for(;;){
+					ch=fgetc(f);
+					if(!(ch=='\n' || ch>='A' && ch<='Z' || ch>='a' && ch<='z' || ch==':')) break;
+					while(ch!='\n' && ch!=EOF){
 						ch=fgetc(f);
-						if(ch=='a' || ch=='A'){
-							char author[128];
-							size_t l= fread(author, 1, sizeof(author)-1, f);
-							author[l]='\0';
-							if(!_strnicmp(author, "uthor:", 6)){
-								char *a= author+6;
-								while(*a==' ') a++;
-								char *e= strchr(a, 0);
-								e--;
-								while(e>=a && (*e==' ' || *e=='\r' || *e=='\n')) e--;
-								e++;
-								*e='\0';
-								l=e-a;
-								if(l){
-									char *&la= levoff[level].author;
-									dels(la);
-									la= new char[l+1];
-									strcpy(la, a);
-								}
+					}
+				}
+
+				//copy level to buf and replace '\n' by '!'
+				Pchar s=buf;
+				while(!(ch=='\n' || ch==EOF || ch>='A' && ch<='Z' || ch>='a' && ch<='z')){
+					do{
+						*s++= char(ch);
+						ch=fgetc(f);
+					} while(ch!='\n' && ch!=EOF);
+					*s++='!';
+					ch=fgetc(f);
+				}
+				*s='\0';
+
+				//read author
+				if(ch!=EOF){
+					ungetc(ch, f);
+					char author[128];
+					while(fgets(author, sizeA(author), f))
+					{
+						if(!_strnicmp(author, "author:", 7)){
+							char *a= author+7;
+							//trim spaces
+							while(*a==' ') a++;
+							char *e= strchr(a, 0);
+							e--;
+							while(e>=a && (*e==' ' || *e=='\r' || *e=='\n')) e--;
+							e++;
+							*e='\0';
+							int l=e-a;
+							if(l){
+								char *&la= levoff[level].author;
+								dels(la);
+								la= new char[l+1];
+								strcpy(la, a);
 							}
 						}
-						if(ch=='\n' || ch==EOF || ch>='A' && ch<='Z' || ch>='a' && ch<='z'){
-							break;
-						}
-						do{
-							*s++= char(ch);
-							ch=fgetc(f);
-						} while(ch!='\n' && ch!=EOF);
-						*s++='!';
 					}
-					*s='\0';
-					notResize++;
-					int err= rdLevel(buf, 0);
-					notResize--;
-					if(!err || err>9){
-						if(editing){
-							newBoard(0, 0, 1);
-							fillOuter();
-							resize();
-						}
-						else{
-							notMsg++;
-							optimizeLevel();
-							wrLevel();
-							resetLevel();
-							notMsg--;
-						}
-					}
-					delete[] buf;
 				}
+
+				notResize++;
+				err= rdLevel(buf, 0);
+				notResize--;
+				if(!err || err>9){
+					if(editing){
+						newBoard(0, 0, 1);
+						fillOuter();
+						resize();
+					}
+					else{
+						notMsg++;
+						optimizeLevel();
+						wrLevel();
+						if(load) resetLevel();
+						notMsg--;
+					}
+				}
+				delete[] buf;
 			}
-			fclose(f);
 		}
+		fclose(f);
 	}
-	return result;
+	return err;
+}
+
+void openLevel()
+{
+	if(openFileDlg(&levelOfn)) openLevel(fnlevel, true);
+}
+
+void importLevels(char* dir)
+{
+	HANDLE h;
+	WIN32_FIND_DATA fd;
+	char buf[MAX_PATH];
+
+	GetCurrentDirectory(MAX_PATH, buf);
+	SetCurrentDirectory(dir);
+	h = FindFirstFile("*.xsb", &fd);
+	if(h!=INVALID_HANDLE_VALUE){
+		do{
+			if(!(fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)){
+				openLevel(fd.cFileName, false);
+			}
+		} while(FindNextFile(h, &fd));
+		FindClose(h);
+	}
+	SetCurrentDirectory(buf);
 }
 //---------------------------------------------------------------------------
 //open file "sokoban.dat"
@@ -924,6 +961,7 @@ start:
 		}
 	}
 	else{
+		//read whole file into memory
 		int len=fsize(f);
 		if(len>0){
 			levels= new char[len+1];
@@ -937,6 +975,7 @@ start:
 				else{
 					levelsk= levels+len;
 					*levelsk='\n';
+					//total count 
 					Nlevels=0;
 					Pchar p= levels;
 					while(p<levelsk){
@@ -944,6 +983,7 @@ start:
 						while(*p!='\n') p++;
 						p++;
 					}
+					//file header
 					p=levels;
 					if(*p=='['){
 						while(*p!=']' && *p!='\n') p++;
@@ -956,20 +996,25 @@ start:
 						msg(lng(822, "Database is empty"));
 					}
 					else{
+						//read all levels
 						levoff= new Level[Nlevels];
 						for(int i=0; i<Nlevels; i++){
 							Level *lev= &levoff[i];
 							lev->author="";
 							lev->offset=p;
 							while(!isSep(*p)) p++;
-
-							/*for(int j=0; j<i; j++){
-							if(!_strnicmp(levoff[j].offset, lev->offset, p-lev->offset)){
-							msg("%d = %d",i+1,j+1);
-							break;
-							}
+							
+							/*//remove duplicates
+							for(int j=0; j<i; j++){
+								if(!_strnicmp(levoff[j].offset, lev->offset, p-lev->offset)){
+									i--;
+									Nlevels--;
+									modifData=true;
+									break;
+								}
 							}*/
 
+							//author and solutions
 							if(*p==';'){
 								*p++='\0';
 								lev->author=p;
@@ -982,8 +1027,21 @@ start:
 							}
 							*p++='\0';
 							if(*p=='\n') p++;
+
+							/*//verify solution
+							if(lev->best.Mdata){
+								getDim(lev->offset, lev->width, lev->height);
+								if(readSolution(lev->best.Mdata, lev, &lev->best)) msg("Solution of level %d is wrong", i+1);
+							}*/
+
+							/*//remove levels which have only 1 object
+							if(getNobj(lev->offset)<2){ 
+								i--;
+								Nlevels--;
+								modifData=true;
+							}*/
 						}
-						result=0;
+						result=0; //success
 					}
 				}
 			}
