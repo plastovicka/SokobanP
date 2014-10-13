@@ -233,31 +233,31 @@ BEGIN
     LTEXT           "88888",104,38,166,20,8
 END
 
-OPTIONS DIALOG DISCARDABLE  20, 21, 150, 230
+OPTIONS DIALOG DISCARDABLE  20, 21, 153, 230
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Options"
 FONT 9, "MS Shell Dlg"
 BEGIN
-    CONTROL         "",-1,"Static",SS_BLACKFRAME,3,3,142,52
+    CONTROL         "",-1,"Static",SS_BLACKFRAME,3,3,144,52
     LTEXT           "&Animation speed:",516,8,7,101,8
-    EDITTEXT        101,114,5,24,12
+    EDITTEXT        101,114,5,24,12,ES_NUMBER
     LTEXT           "&Playback speed:",517,8,24,101,8
-    EDITTEXT        102,114,22,24,12
+    EDITTEXT        102,114,22,24,12,ES_NUMBER
     LTEXT           "&Fast playback speed:",518,8,40,101,8
-    EDITTEXT        103,114,39,24,12
-    CONTROL         "",-1,"Static",SS_BLACKFRAME,3,56,142,51
+    EDITTEXT        103,114,39,24,12,ES_NUMBER
+    CONTROL         "",-1,"Static",SS_BLACKFRAME,3,56,144,51
     CONTROL         "show &toolbar",511,"Button",BS_AUTOCHECKBOX | 
                     WS_TABSTOP,9,61,130,12
     CONTROL         "show &statusbar",512,"Button",BS_AUTOCHECKBOX | 
                     WS_TABSTOP,9,76,130,12
     CONTROL         "&center window",513,"Button",BS_AUTOCHECKBOX | 
                     WS_TABSTOP,9,91,130,12
-    CONTROL         "",-1,"Static",SS_BLACKFRAME,3,108,142,32
+    CONTROL         "",-1,"Static",SS_BLACKFRAME,3,108,144,32
     CONTROL         "&hide walls",514,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
                     9,111,130,12
-    CONTROL         "&invisible objects",515,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,9,124,130,12
-    GROUPBOX        "After you finish level",559,3,149,142,56
+    LTEXT           "Objects &visibility radius:",543,8,126,101,8
+    EDITTEXT        104,117,124,24,12,ES_NUMBER
+    GROUPBOX        "After you finish level",559,3,149,144,56
     CONTROL         "do &nothing",560,"Button",BS_AUTORADIOBUTTON,8,162,128,
                     10
     CONTROL         "go to &random level",561,"Button",BS_AUTORADIOBUTTON,8,
@@ -353,7 +353,7 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,2,2,0
+ FILEVERSION 3,3,0,0
  PRODUCTVERSION 0,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
@@ -372,7 +372,7 @@ BEGIN
             VALUE "Comments", "\0"
             VALUE "CompanyName", " \0"
             VALUE "FileDescription", "SokobanP\0"
-            VALUE "FileVersion", "3.2\0"
+            VALUE "FileVersion", "3.3\0"
             VALUE "InternalName", "\0"
             VALUE "LegalCopyright", "© 2003-2014  Petr Laštovièka\0"
             VALUE "LegalTrademarks", "\0"
@@ -407,7 +407,7 @@ BEGIN
 
     "OPTIONS", DIALOG
     BEGIN
-        RIGHTMARGIN, 137
+        RIGHTMARGIN, 140
         BOTTOMMARGIN, 229
     END
 

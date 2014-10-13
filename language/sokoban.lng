@@ -67,7 +67,7 @@
 512=show &statusbar
 513=&center window
 514=&hide walls
-515=&invisible objects
+543=Objects &visibility radius:
 516=&Animation speed:
 517=&Playback speed:
 518=&Fast playback speed:
