@@ -144,7 +144,12 @@ extern Psquare board, boardk, mover, selected, hilited, *distBuf1, *distBuf2;
 extern Pchar user, userk, levels, levelsk, logPos;
 extern Level *levoff;
 extern QuickInfo *quickSave;
+
+#ifdef SOLVE_ALL
+#define Mundo 1500000
+#else
 #define Mundo 50000
+#endif
 extern UndoInfo rec[Mundo], *undoPos, *redoPos;
 extern EdUndo edRec[1024], *edUndo, *edRedo;
 #define Mlog (4*Mundo)
