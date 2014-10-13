@@ -47,7 +47,7 @@ level,         //current level index (from 0)
 	statusBarVisible=1,//status bar is visible
 	center=1,      //window is in screen center
 	nowalls=0,     //walls are hidden
-	noobjects=0,   //objects (boxes) are hidden
+	noobjects=0,   //visibility distance to hide objects (boxes), value 0 is unlimited
 	noselected=0,  //selected objects are not highlited
 	gratulOn=1,    //message is shown when better solution is found
 	xtrans, ytrans,//level mirrorring
@@ -265,7 +265,7 @@ void sleep()
 	MSG mesg;
 	if(notdraw || isHungAppWindow && isHungAppWindow(hWin) &&
 		(PeekMessage(&mesg, NULL, WM_LBUTTONDOWN, WM_LBUTTONDOWN, PM_NOREMOVE)
-		|| PeekMessage(&mesg, NULL, WM_NCLBUTTONDOWN, WM_NCLBUTTONDOWN, PM_NOREMOVE))) 
+		|| PeekMessage(&mesg, NULL, WM_NCLBUTTONDOWN, WM_NCLBUTTONDOWN, PM_NOREMOVE)))
 		return;
 	if(!replay && PeekMessage(&mesg, NULL, WM_TIMER, WM_TIMER, PM_REMOVE)){
 		DispatchMessage(&mesg);
@@ -305,6 +305,16 @@ Psquare SquareXY(int x, int y)
 	if(xtrans) x= width-1-x;
 	if(ytrans) y= height-1-y;
 	return square(x, y);
+}
+
+template <typename T> inline T sqr(T x)
+{
+	return x * x;
+}
+
+inline int sqrO(int x)
+{
+	return (noobjects<3) ? sqr(x)*2 : sqr(x);
 }
 //---------------------------------------------------------------------------
 int getRadioButton(HWND hWnd, int item1, int item2)
@@ -413,8 +423,8 @@ void paintSquare(Psquare p)
 				if(i==BM_OBJECT) i=BM_OBJECTSTORE;
 			}
 			if(i==BM_WALL && nowalls && !editing) i=BM_BACKGROUND;
-			if(i==BM_OBJECT && noobjects && !editing &&
-				(abs(p->x - mover->x)>1 || abs(p->y - mover->y)>1)){
+			if(i==BM_OBJECT && noobjects && !editing && !replay &&
+				sqr(p->x - mover->x) + sqr(p->y - mover->y)>sqrO(noobjects)){
 				i=BM_GROUND;
 			}
 			if(p==selected && !noselected){
@@ -426,6 +436,8 @@ void paintSquare(Psquare p)
 	}
 }
 //---------------------------------------------------------------------------
+//editor must paint adjacent squares
+// because some skins have connected walls
 void paintSquare9(Psquare pos)
 {
 	for(int i=0; i<9; i++){
@@ -433,10 +445,20 @@ void paintSquare9(Psquare pos)
 	}
 }
 
+//show or hide objects near visibility distance
 void paintSquareO(Psquare pos)
 {
-	if(noobjects) paintSquare9(pos);
-	else paintSquare(pos);
+	paintSquare(pos);
+
+	if(noobjects>0){
+		int d1 = sqrO(noobjects-1), d2 = sqrO(noobjects+1);
+		for(Psquare p=board; p<boardk; p++){
+			if(p->obj==BM_OBJECT){
+				int d= sqr(p->x - pos->x) + sqr(p->y - pos->y);
+				if(d<=d2 && d>=d1) paintSquare(p);
+			}
+		}
+	}
 }
 //---------------------------------------------------------------------------
 //select and hilite object
@@ -944,7 +966,7 @@ bool move(int direct, bool setUndo)
 		}
 		undoPos++;
 	}
-	paintSquareO(old);
+	paintSquare(old);
 	char ch= char(direct + '0');
 	if(mover->obj!=BM_GROUND){
 		//push object
@@ -1056,7 +1078,7 @@ void push1R(Psquare dest, int direct)
 		dest=pn;
 		moverDirect=im;
 		direct=im;
-		paintSquareO(mover);
+		paintSquare(mover);
 		paintSquareO(dest);
 		moves--;
 		pushes--;
@@ -1602,9 +1624,7 @@ void editMouse(Psquare pos, WPARAM wP)
 			//right button -> create or remove object
 			pos->obj= char(pos->obj==BM_OBJECT ? BM_GROUND : BM_OBJECT);
 	}
-	for(int i=0; i<9; i++){
-		paintSquare(nxtP(pos, i));
-	}
+	paintSquare9(pos);
 	edUndo++;
 	edRedo=0;
 }
@@ -1719,23 +1739,25 @@ BOOL CALLBACK OptionsProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM)
 			{&moveDelay, 101},
 			{&playTimer, 102},
 			{&fastTimer, 103},
+			{&noobjects, 104},
 			{&toolBarVisible, 511},
 			{&statusBarVisible, 512},
 			{&center, 513},
 			{&nowalls, 514},
-			{&noobjects, 515},
 	};
-	int i;
+	int i,id;
 
 	switch(mesg){
 		case WM_INITDIALOG:
 			setDlgTexts(hWnd, 510);
 			for(i=0; i<sizeof(D)/sizeof(*D); i++){
-				if(D[i].id>=300){
-					CheckDlgButton(hWnd, D[i].id, *D[i].prom ? BST_CHECKED : BST_UNCHECKED);
+				id=D[i].id;
+				if(id>=300){
+					CheckDlgButton(hWnd, id, *D[i].prom ? BST_CHECKED : BST_UNCHECKED);
 				}
 				else{
-					SetDlgItemInt(hWnd, D[i].id, *D[i].prom, FALSE);
+					SetDlgItemInt(hWnd, id, *D[i].prom, FALSE);
+					if(id==104 && !noobjects) SetDlgItemText(hWnd, id, "");
 				}
 			}
 			CheckRadioButton(hWnd, 560, 562, 560+nextAction);
@@ -1914,20 +1936,26 @@ int sortUser(const void *a, const void *b)
 }
 int sortEq(const void *a, const void *b)
 {
-	return descending*((*(Level**)b)->user.eval()-(*(Level**)b)->best.eval()
-		-(*(Level**)a)->user.eval()+(*(Level**)a)->best.eval());
+	int r= (*(Level**)b)->user.eval()-(*(Level**)b)->best.eval()
+		-(*(Level**)a)->user.eval()+(*(Level**)a)->best.eval();
+	if(r==0) return sortUser(a, b);
+	return descending*r;
 }
 int sortDim(const void *a, const void *b)
 {
-	return descending*((*(Level**)b)->i-(*(Level**)a)->i);
+	int r= (*(Level**)b)->i - (*(Level**)a)->i;
+	if(r==0) r= int(*(Level**)b - *(Level**)a);
+	return descending*r;
 }
 int sortAuthor(const void *a, const void *b)
 {
-	return descending*_stricmp((*(Level**)b)->author, (*(Level**)a)->author);
+	int r= _stricmp((*(Level**)b)->author, (*(Level**)a)->author);
+	if(r==0) r= int(*(Level**)b - *(Level**)a);
+	return descending*r;
 }
 int sortObj(const void *a, const void *b)
 {
-	return descending*((*(Level**)b)->i-(*(Level**)a)->i);
+	return sortDim(a, b);
 }
 
 void sortList()
@@ -2058,9 +2086,14 @@ BOOL CALLBACK LevelsProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 							case 2:
 								buf[0]=0;
 								if(lev->best.Mmoves && lev->user.Mmoves){
-									if(lev->best.eval()==lev->user.eval()) buf[0]= '=';
+									if(lev->best.eval()==lev->user.eval()){
+										buf[0]='=';
+										buf[1]=0;
+										if(!strcmp(lev->user.Mdata, lev->best.Mdata)){
+											buf[1]='='; buf[2]=0;
+										}
+									}
 								}
-								buf[1]=0;
 								break;
 							case 3:
 								sprintf(buf, "%d - %d", lev->user.Mmoves, lev->user.Mpushes);
@@ -2162,6 +2195,10 @@ BOOL CALLBACK LevelsProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 						InvalidateRect(listBox, 0, TRUE);
 					}
 					break;
+					//case 'Q':
+					//	qsort(levoff, Nlevels, sizeof(Level), sortT);
+					//	modifData=true;
+					//	break;
 				default:
 					return -1;
 			}
@@ -2669,10 +2706,16 @@ LRESULT CALLBACK MainWndProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 			}
 			else{
 				if(replay) break;
-				if(mouse==mover) undo();
+
+				static DWORD tick;
+				if(mouse==mover){
+					if(GetTickCount()-tick > 100)
+						undo();
+				}
 				else{
 					setSelected(0);
 					moveM(mouse);
+					tick=GetTickCount();
 				}
 			}
 		}
