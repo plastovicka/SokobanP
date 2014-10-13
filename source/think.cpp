@@ -2271,7 +2271,7 @@ int findSolutionThread()
 	if(UfoundPos){
 		loadSolution(level, logbuf);
 		assert(!movError);
-		assert(eval(moves, pushes) < levoff[level].best.eval());
+		assert(algorithm!=4 || eval(moves, pushes) <= levoff[level].best.eval());
 		//write solution to dat file
 		finish();
 		saveUser();
@@ -2290,7 +2290,7 @@ int findSolutionThread()
 	}
 	if(UposTable==posTablek){
 		if(gratulOn){
-			assert(k==maxPos);
+			//assert(k==maxPos);
 			msg("Timeout: %f s\n\nPositions: %f", timeS, NpositionM);
 		}
 		return -1;
@@ -2308,7 +2308,7 @@ DWORD WINAPI findSolutionThread(LPVOID alg)
 	algorithm=(int)alg;
 	SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_IDLE);
 
-#if SOLVE_ALL
+#ifdef SOLVE_ALL
 	char f[16];
 	strcpy(f,"comp0.rec");
 	f[4]=(char)(algorithm+'0');
@@ -2318,7 +2318,7 @@ DWORD WINAPI findSolutionThread(LPVOID alg)
 	gratulOn=0;
 	for(int i=0; i<Nlevels; i++){
 		loadLevel(i);
-		if((algorithm==4 || getNobj(levoff[i].offset)<20) && !levoff[i].user.Mmoves){
+		if((algorithm==4 ? levoff[i].best.Mmoves>0 : getNobj(levoff[i].offset)<20) && !levoff[i].user.Mmoves){
 			update();
 			findSolutionThread();
 			writeini();

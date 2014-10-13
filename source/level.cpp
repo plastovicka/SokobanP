@@ -549,6 +549,9 @@ void loadRandomLevel()
 void loadNextLevel()
 {
 	switch(nextAction){
+		case 0:
+			status();
+			break;
 		case 1:
 			loadRandomLevel();
 			break;
@@ -875,7 +878,7 @@ int openLevel(char* fileName, bool load)
 							while(e>=a && (*e==' ' || *e=='\r' || *e=='\n')) e--;
 							e++;
 							*e='\0';
-							int l=e-a;
+							size_t l=e-a;
 							if(l){
 								char *&la= levoff[level].author;
 								dels(la);
