@@ -1745,7 +1745,7 @@ BOOL CALLBACK OptionsProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM)
 			{&center, 513},
 			{&nowalls, 514},
 	};
-	int i,id;
+	int i, id;
 
 	switch(mesg){
 		case WM_INITDIALOG:
@@ -2676,14 +2676,6 @@ LRESULT CALLBACK MainWndProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 		}
 			break;
 
-		case WM_LBUTTONUP:
-			if(ldown){
-				ReleaseCapture();
-				ldown=false;
-				editPos=0;
-			}
-			break;
-
 		case WM_RBUTTONUP:
 			if(rdown){
 				ReleaseCapture();
@@ -2721,6 +2713,17 @@ LRESULT CALLBACK MainWndProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 		}
 			break;
 
+		case WM_LBUTTONUP:
+			if(ldown){
+				ReleaseCapture();
+				ldown=false;
+				editPos=0;
+			}
+			{
+				Psquare mouse= SquareXY(LOWORD(lP), HIWORD(lP));
+				if(!mouse || mouse->obj!=BM_GROUND || !justSelected || editing) break;
+			}
+			//!
 		case WM_LBUTTONDOWN:
 		{
 			if(solving) break;
