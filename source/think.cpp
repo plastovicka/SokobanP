@@ -9,6 +9,7 @@
 #include <string.h>
 #include <assert.h>
 #include <stddef.h>
+#include <stdio.h>
 #include <new>
 #include "level.h"
 //---------------------------------------------------------------------------
@@ -33,8 +34,8 @@ very slow
 3) gener
 used in level editor to shuffle objects
 4) optimizer
-requires solution
-
+requires existing solution
+5) external YASS (Yet another Sokoban solver) http://sourceforge.net/projects/sokobanyasc/
 
 Memory:
 posTable:  (18+Nobj)*maxPos
@@ -48,7 +49,7 @@ const int	maxMem=100;
 #elif defined(_WIN64)
 const int	maxMem=3000;
 #else
-const int	maxMem=1400;
+const int	maxMem=1200;
 #endif
 
 const unsigned maxPos0=2000000000;//max positions
@@ -263,7 +264,7 @@ void noMem()
 int testPos(Pchar prevPos)
 {
 	Pchar v;
-	int i;           
+	int i;
 
 	//objects must be placed on board
 	for(v=prevPos+DXY; v<prevPos+posSize1; v+=DXY){
@@ -1047,11 +1048,11 @@ void breadthSearch()
 							um= (isDual ? testLastMoveR : testLastMove)(&curMove, Umoves);
 							if(um) um->direct=-1;
 						}
-						if(!isDual && testBlocked(newPos, &curMove, newPosHdr->movesEnd)){///
+						/*if(!isDual && testBlocked(newPos, &curMove, newPosHdr->movesEnd)){///
 							//position does not have any moves
 							newPosHdr->movesEnd= Umoves;
-						}
-						else{
+							}
+							else*/{
 							Umoves= newPosHdr->movesEnd;
 						}
 #ifdef DEBUG
@@ -1106,7 +1107,7 @@ void breadthSearch()
 
 lend:;
 #if !defined(NDEBUG)
-	VirtualAlloc(movedObj,(char*)movedObjBeg-(char*)movedObj,MEM_COMMIT,PAGE_READWRITE);
+	VirtualAlloc(movedObj, (char*)movedObjBeg-(char*)movedObj, MEM_COMMIT, PAGE_READWRITE);
 #endif
 }
 //-------------------------------------------------------------------
@@ -1236,7 +1237,8 @@ void dijkstra()
 		else{
 			testLastMoveD(curPosHdr->lastMove, Umoves, UmovesEnd);
 		}
-		if(isDual || !testBlocked(curPos, curPosHdr->lastMove, UmovesEnd)){///
+		//if(isDual || !testBlocked(curPos, curPosHdr->lastMove, UmovesEnd))
+		{///
 			//try all possible moves from current position
 			for(; Umoves<UmovesEnd; Umoves++){
 				newPos=UposTable;
@@ -2227,12 +2229,102 @@ void wrSol()
 	logPos=0;
 }
 //-------------------------------------------------------------------
+int YASS()
+{
+	char fn1[256];
+
+	getExeDir(fn1, "");
+	SetCurrentDirectory(fn1);
+
+	//save level
+	getExeDir(fn1, "yassTmp.xsb");
+	FILE *f= fopen(fn1, "wt");
+	if(!f) return -5;
+	Pchar buf= wrLevel(false);
+	if(!buf){ fclose(f); return -6; }
+	fputs(buf, f);
+	delete[] buf;
+	if(fclose(f)) return -7;
+
+	//run YASS
+	char cmd[512];
+	strcpy(cmd, "YASS.exe \"");
+	strcat(cmd, fn1);
+	strcat(cmd, "\" -maxtime 100");
+	PROCESS_INFORMATION pi;
+	STARTUPINFO si;
+	memset(&si, 0, sizeof(STARTUPINFO));
+	si.cb= sizeof(STARTUPINFO);
+	si.dwFlags= STARTF_USESHOWWINDOW;
+	si.wShowWindow = SW_MINIMIZE;
+	if(!CreateProcess(0, cmd, 0, 0, FALSE, 0, 0, 0, &si, &pi)) return -8;
+	CloseHandle(pi.hThread);
+	WaitForSingleObject(pi.hProcess, INFINITE);
+
+	//wait
+	DWORD exitCode;
+	GetExitCodeProcess(pi.hProcess, &exitCode);
+	CloseHandle(pi.hProcess);
+	if(exitCode) return -9;
+
+	//read solution
+	WIN32_FIND_DATA fd;
+	HANDLE h = FindFirstFile("yassTmp*.sok", &fd);
+	if(h==INVALID_HANDLE_VALUE) return -10;
+	f= fopen(fd.cFileName, "r");
+	FindClose(h);
+	if(!f) return -11;
+	fseek(f, 0, SEEK_END);
+	size_t len=ftell(f);
+	if(!len || len > 10000000){ fclose(f); return -12; }
+	rewind(f);
+	buf= new char[len];
+	len= fread(buf, 1, len, f);
+	buf[len]='\0';
+	fclose(f);
+
+	//convert solution
+	Pchar p= strstr(buf, "Solution");
+	if(p) p=strchr(p, '\n');
+	if(!p){ delete[] buf; return -13; }
+	Pchar d=buf;
+	while(*++p){
+		char c=0;
+		switch(*p){
+			case 'l': c='0'; break;
+			case 'r': c='1'; break;
+			case 'u': c='2'; break;
+			case 'd': c='3'; break;
+			case 'L': c='4'; break;
+			case 'R': c='5'; break;
+			case 'U': c='6'; break;
+			case 'D': c='7'; break;
+		}
+		if(c) *d++=c;
+	}
+	*d=0;
+
+	//test solution
+	notResize++;
+	loadSolution(level, buf);
+	notResize--;
+	delete[] buf;
+	if(movError) return -14;
+	if(!finish()) return -15;
+	saveUser();
+	saveData();
+	update();
+	return 0;
+}
+//-------------------------------------------------------------------
 int findSolutionThread()
 {
 	int k, step=0;
 	DWORD time= GetTickCount();
 	playtime=0;
 	stopTime=false;
+
+	if(algorithm==5) return YASS();
 
 	delBlind();
 	moverStart=mover;
@@ -2310,9 +2402,9 @@ DWORD WINAPI findSolutionThread(LPVOID alg)
 
 #ifdef SOLVE_ALL
 	char f[16];
-	strcpy(f,"comp0.rec");
+	strcpy(f, "comp0.rec");
 	f[4]=(char)(algorithm+'0');
-	getExeDir(fnuser,f);
+	getExeDir(fnuser, f);
 	delUser();
 	initUser();
 	gratulOn=0;
