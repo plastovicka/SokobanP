@@ -99,6 +99,7 @@ void findDist(Psquare src, Psquare dest);
 void movLevels(Level *first, Level *last, Level *dest);
 int optimizeLevel();
 bool wrLevel();
+Pchar wrLevel(bool pack);
 void openPos();
 void savePos();
 void openUser();

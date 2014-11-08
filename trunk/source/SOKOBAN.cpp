@@ -2535,6 +2535,7 @@ LRESULT CALLBACK MainWndProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 					case 451:
 					case 452:
 					case 454:
+					case 455:
 						undoAll();
 						update();
 						findSolution(cmd-450);

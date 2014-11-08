@@ -95,7 +95,8 @@ BEGIN
     VK_NUMPAD1,     451,                    VIRTKEY, ALT, NOINVERT
     VK_NUMPAD2,     452,                    VIRTKEY, ALT, NOINVERT
     VK_NUMPAD4,     454,                    VIRTKEY, ALT, NOINVERT
-    VK_SPACE,       403,                    VIRTKEY, NOINVERT
+		VK_NUMPAD5, 455, VIRTKEY, ALT, NOINVERT
+		VK_SPACE, 403, VIRTKEY, NOINVERT
     VK_TAB,         109,                    VIRTKEY, NOINVERT
     "X",            212,                    VIRTKEY, NOINVERT
     "X",            103,                    VIRTKEY, ALT, NOINVERT
@@ -353,7 +354,7 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,3,0,0
+ FILEVERSION 3,3,1,0
  PRODUCTVERSION 0,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
