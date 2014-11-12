@@ -2231,8 +2231,9 @@ void wrSol()
 //-------------------------------------------------------------------
 int YASS()
 {
-	char fn1[256];
+	if(width>50) return -4;
 
+	char fn1[256];
 	getExeDir(fn1, "");
 	SetCurrentDirectory(fn1);
 
@@ -2257,7 +2258,7 @@ int YASS()
 	si.cb= sizeof(STARTUPINFO);
 	si.dwFlags= STARTF_USESHOWWINDOW;
 	si.wShowWindow = SW_MINIMIZE;
-	if(!CreateProcess(0, cmd, 0, 0, FALSE, 0, 0, 0, &si, &pi)) return -8;
+	if(!CreateProcess(0, cmd, 0, 0, FALSE, IDLE_PRIORITY_CLASS, 0, 0, &si, &pi)) return -8;
 	CloseHandle(pi.hThread);
 	WaitForSingleObject(pi.hProcess, INFINITE);
 
@@ -2410,7 +2411,7 @@ DWORD WINAPI findSolutionThread(LPVOID alg)
 	gratulOn=0;
 	for(int i=0; i<Nlevels; i++){
 		loadLevel(i);
-		if((algorithm==4 ? levoff[i].best.Mmoves>0 : getNobj(levoff[i].offset)<20) && !levoff[i].user.Mmoves){
+		if((algorithm==4 ? levoff[i].best.Mmoves>0 : getNobj(levoff[i].offset)<200) && !levoff[i].user.Mmoves){
 			update();
 			findSolutionThread();
 			writeini();

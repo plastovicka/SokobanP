@@ -1,5 +1,5 @@
 ﻿- Alchemyst
-©2002 GerrW
+©2002 Gerry Wiseman
 
 - Allan B. Liss
 ©1992 Allan B. Liss
@@ -17,9 +17,6 @@ http://www.sourcecode.se/sokoban
 - Desta v2
 ©2013 Julius Faltus
 
-- Diamond
-Linux KDE
-
 - Fanda and barrels v1
 ©2013 Julius Faltus
 
@@ -30,6 +27,15 @@ Linux KDE
 ©1999 John Davis
 
 - Heavy Metal
+Gerry Wiseman
+
+- Jumanji
+Gerry Wiseman
+
+- KSokoban
+Anders Widell, Linux KDE
+
+- Magneto
 Gerry Wiseman
 
 - Mario v1
@@ -45,6 +51,9 @@ Dragan Eraković
 
 - Metallica
 Gerald Wallace
+
+- Metallica2
+Gerry Wiseman
 
 - Night Shift
 Gerry Wiseman
@@ -65,7 +74,7 @@ iamuc internet design team
 Dragan Eraković
 
 - Skulloban
-@2002 GerrW
+@2002 Gerry Wiseman
 
 - Soko P Girl
 Dragan Eraković
