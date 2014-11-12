@@ -1701,7 +1701,7 @@ void stop()
 //advance time by 1 second
 void clock()
 {
-	if(IsIconic(hWin)) return; //window is minimalized
+	if(IsIconic(hWin) && !solving) return; //window is minimalized
 	if(editing || replay){
 		//don't display time in editor or solutions player
 		status(4, "");
