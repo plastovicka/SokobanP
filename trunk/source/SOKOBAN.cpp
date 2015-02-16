@@ -2000,7 +2000,7 @@ BOOL CALLBACK LevelsProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 	{"Level", "Best solution", "", "Your solution", "Objects", "Dimension", "Author"};
 
 	static Level *first, *last;
-	int item, notif, i, y;
+	int item, notif, i, x, y;
 	HWND listBox = GetDlgItem(hWnd, 101);
 	HWND header = GetDlgItem(hWnd, 102);
 	RECT rc;
@@ -2056,20 +2056,19 @@ BOOL CALLBACK LevelsProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 
 		case WM_MEASUREITEM:
 			lpmis = (LPMEASUREITEMSTRUCT)lP;
-			lpmis->itemHeight = HIWORD(GetDialogBaseUnits())+1;
+			SetRectEmpty(&rc);
+			rc.bottom=8;
+			MapDialogRect(hWnd, &rc);
+			lpmis->itemHeight = rc.bottom+1;
 			return TRUE;
 
 		case WM_DRAWITEM:
 			lpdis = (LPDRAWITEMSTRUCT)lP;
 			if(lpdis->itemID == -1) break;
-			if(lpdis->itemAction==ODA_DRAWENTIRE || lpdis->itemAction==ODA_SELECT){
-				SelectObject(lpdis->hDC, GetStockObject(NULL_BRUSH));
-				SelectObject(lpdis->hDC, GetStockObject(WHITE_PEN));
-				Rectangle(lpdis->hDC, lpdis->rcItem.left, lpdis->rcItem.top,
-					lpdis->rcItem.right, lpdis->rcItem.bottom);
-			}
 			switch(lpdis->itemAction){
 				case ODA_DRAWENTIRE:
+				case ODA_SELECT:
+					FillRect(lpdis->hDC, &lpdis->rcItem, (HBRUSH)GetStockObject(WHITE_BRUSH));
 					lev= A[lpdis->itemID];
 					GetTextMetrics(lpdis->hDC, &tm);
 					rc.top= lpdis->rcItem.top;
@@ -2112,7 +2111,6 @@ BOOL CALLBACK LevelsProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 						rc.right+=colWidth[i];
 						DrawText(lpdis->hDC, buf, (int)strlen(buf), &rc, DT_END_ELLIPSIS|DT_NOPREFIX);
 					}
-				case ODA_SELECT:
 					if(lpdis->itemState & ODS_SELECTED){
 						DrawFocusRect(lpdis->hDC, &lpdis->rcItem);
 					}
@@ -2121,19 +2119,25 @@ BOOL CALLBACK LevelsProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 
 		case WM_SIZE:
 			//adjust controls positions inside window
+			SetRectEmpty(&rc);
+			rc.right=40;
+			rc.bottom=33;
+			MapDialogRect(hWnd, &rc);
+			x=rc.right;
+			y=rc.bottom;
 			GetClientRect(hWnd, &rc);
-			rc.bottom -= 3*HIWORD(GetDialogBaseUnits())+10;
+			rc.bottom -= y;
 			hdl.prc = &rc;
 			hdl.pwpos = &wp;
 			Header_Layout(header, &hdl);
 			SetWindowPos(listBox, 0, 0, wp.cy, rc.right, rc.bottom, SWP_NOZORDER);
 			SetWindowPos(header, wp.hwndInsertAfter, 0, 0,
 				wp.cx, wp.cy+1, wp.flags|SWP_SHOWWINDOW);
-			y= HIWORD(lP)-2*HIWORD(GetDialogBaseUnits());
+			y= HIWORD(lP)-y*2/3;
 			setWindowXY(GetDlgItem(hWnd, IDOK), int(LOWORD(lP)*0.33), y);
 			setWindowXY(GetDlgItem(hWnd, IDCANCEL), int(LOWORD(lP)*0.61), y);
 			setWindowXY(GetDlgItem(hWnd, 528), 4, y+2);
-			setWindowXY(GetDlgItem(hWnd, 104), 9*LOWORD(GetDialogBaseUnits()), y+2);
+			setWindowXY(GetDlgItem(hWnd, 104), x, y+2);
 			break;
 
 		case WM_NOTIFY:
@@ -2940,6 +2944,12 @@ int pascal WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR, int cmdShow)
 	};
 
 	inst=hInstance;
+
+	//DPIAware
+	typedef BOOL(WINAPI *TGetProcAddress)();
+	TGetProcAddress getProcAddress = (TGetProcAddress) GetProcAddress(GetModuleHandle("user32"), "SetProcessDPIAware");
+	if(getProcAddress) getProcAddress();
+
 #if _WIN32_IE >= 0x0300
 	INITCOMMONCONTROLSEX iccs;
 	iccs.dwSize= sizeof(INITCOMMONCONTROLSEX);
