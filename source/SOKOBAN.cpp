@@ -2258,7 +2258,7 @@ BOOL CALLBACK SolutionProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM)
 			}
 			if(s[0] && s[1] && !strcmp(s[0], s[1])) n--;
 			if(!n) msg(lng(807, "This level has not been solved"));
-			if(n<2) EndDialog(hWnd, (int)dat);
+			if(n<2) EndDialog(hWnd, (INT_PTR)dat);
 			return TRUE;
 		}
 
@@ -2271,9 +2271,9 @@ BOOL CALLBACK SolutionProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM)
 					Level *lev= &levoff[level];
 					if(IsDlgButtonChecked(hWnd, 541)) dat=lev->best.Mdata;
 					if(IsDlgButtonChecked(hWnd, 542)) dat=lev->user.Mdata;
-					EndDialog(hWnd, (int)dat);
-				}
+					EndDialog(hWnd, (INT_PTR)dat);
 					return TRUE;
+				}
 				case IDCANCEL:
 					EndDialog(hWnd, 0);
 					return TRUE;
