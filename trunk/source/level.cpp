@@ -242,8 +242,8 @@ void newBoard(int w, int h, int copy)
 
 	if(copy==1){
 		int dx= (w-width)>>1, dy= (h-height)>>1;
-		for(int y=1; y<height-1; y++){
-			for(int x=1; x<width-1; x++){
+		for(y=1; y<height-1; y++){
+			for(x=1; x<width-1; x++){
 				Psquare src= square(x, y);
 				Psquare dest= newp + x+dx + (y+dy)*w;
 				if(dest->obj==BM_GROUND){

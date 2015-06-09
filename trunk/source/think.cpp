@@ -1005,9 +1005,9 @@ void breadthSearch()
 
 		//release memory of already processed moves
 		char *m= (char*)((INT_PTR)curPosHdr->movesBeg & (INT_PTR)-65536);
-		INT_PTR i= m-movedObjBeg;
-		if(i>5000000){
-			VirtualFree(movedObjBeg, i, MEM_DECOMMIT);
+		INT_PTR sz= m-movedObjBeg;
+		if(sz>5000000){
+			VirtualFree(movedObjBeg, sz, MEM_DECOMMIT);
 			movedObjBeg=m;
 		}
 
@@ -2398,7 +2398,7 @@ int findSolutionThread()
 
 DWORD WINAPI findSolutionThread(LPVOID alg)
 {
-	algorithm=(int)alg;
+	algorithm=(int)(INT_PTR)alg;
 	SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_IDLE);
 
 #ifdef SOLVE_ALL
@@ -2444,7 +2444,7 @@ void findSolution(int alg)
 	setTitle(num);
 	DWORD threadId;
 	HANDLE thread= CreateThread(0, (alg!=4) ? stackSize : 0,
-		(LPTHREAD_START_ROUTINE)findSolutionThread, (LPVOID)alg, 0, &threadId);
+		(LPTHREAD_START_ROUTINE)findSolutionThread, (LPVOID)(INT_PTR)alg, 0, &threadId);
 	CloseHandle(thread);
 }
 
