@@ -1,0 +1,182 @@
+;Application=SokobanP v3.4
+;Language=Swedish
+;TranslatorName=Åke Engelbrektson
+;TranslatorURL=https://svenskasprakfiler.se
+;LastUpdated=16 Sep 2015
+
+13=sokoban.chm
+
+;menu
+600=&Spel
+601=&Språk
+109=&Byt spelare...\tTab
+108=&Spara lösningar\tF12
+105=&Rensa inställningar
+104=&Alternativ...\tCtrl+O
+103=A&vsluta\tAlt+X
+
+602=&Flytta
+211=&Ångra flyttning\tZ
+212=&Upprepa flyttning\tX
+213=Å&ngra steg\tCtrl+Z
+214=U&pprepa steg\tCtrl+X
+201=Ångra &alla\tHome
+209=Upp&repa alla\tEnd
+217=&Gå till...\tF
+112=&Spela upp lösning...\tF9
+
+603=&Position
+110=S&nabbspara\tCtrl+S
+111=Snabb&inläsning\tCtrl+L
+106=&Öppna...\tF3
+107=&Spara...\tF2
+116=Spegelvänd &horisontellt\tCtrl+1
+117=Spegelvänd &vertikalt\tCtrl+2
+
+604=N&ivå
+401=&Nästa\tN
+402=&Föregående\tV
+405=&Gå till...\tG
+403=&Lista...\tF1
+115=N&ytt...\tAlt+E
+408=&Ta bort\tCtrl+D
+407=&Öppna...\tCtrl+I
+406=&Spara...\tCtrl+W
+
+555=&Klar\tEnter
+556=&Redigera\tCtrl+E
+557=A&vbryt redigering\tEsc
+558=&Återställ\tB
+
+605=&Tema
+302=&Nästa\tF7
+303=&Föregående\tF6
+301=&Öppna...\tF8
+304=&Uppdatera\tF5
+
+606=&Hjälp
+350=&Innehåll
+100=&Om...
+
+;dialog boxes
+11=Om
+503=Version
+502=Detta är ett gratisprogram.
+1=OK
+2=Avbryt
+
+527=Nivåer
+528=Lösta
+
+510=Alternativ
+511=Visa &verktygsfält
+512=Visa &statusfält
+513=&Centrera fönster
+514=&Dölj väggar
+543=&Objektens synlighetsradie:
+516=&Animeringshastighet:
+517=&Uppspelningshastighet:
+518=&Snabb uppspelningshastighet:
+559=Efter slutförd nivå
+560=Gör &ingenting
+561=Gå till slu&mpmässig nivå
+562=Gå till n&ästa olösta nivå
+
+519=Gå till
+520=Nivå nummer:
+
+540=Spela upp lösning
+541=Den bästa lösningen
+542=Din lösning
+
+523=Ny nivå
+524=Utvecklare:
+525=Tom nivå
+526=Klona aktuell nivå
+
+521=Gå till steg
+522=Steg:
+
+530=Nivå
+531=Bästa lösning
+533=Din lösning
+534=Objekt
+535=Dimension
+536=Utvecklare
+
+;status
+550=Steg:%d
+551=Flyttningar:%d
+
+801=Sparade positioner (*.sav)\0*.sav\0Alla filer\0*.*\0
+802=Spelares lösningar (*.rec)\0*.rec\0Alla filer\0*.*\0
+803=Teman (*.bmp)\0*.bmp\0
+804=Nivådatabas\0*.*\0
+805=Sokoban-nivåer (*.xsb)\0*.xsb\0Text files (*.txt)\0*.txt\0Alla filer\0*.*\0
+
+;error messages
+700=Kan inte skapa bitmap för tema
+701=Ogiltig bitmap-bredd
+702=Kan inte läsa in BMP-fil
+735=Kan inte skriva till Windows register
+800=För många steg
+807=Den här nivån har inte lösts
+808=Det finns inget att läsa in
+810=Positionen i nivå %d har sparats.\r\nVill du återställa den?
+811=Lösningen är felaktig!
+736=Vill du radera diina inställningar?
+755=Fel i %s\nRad %d
+756=Fel i %s\nMeddelande nummer %d är för stort
+757=Fel i %s\nDuplicerade nummer %d
+753=Filen, %s är för lång
+734=Skrivfel, fil %s
+769=Ogiltig fillängd
+733=Kan inte skriva till filen, %d
+768=Minnesbrist
+812=Vill du verkligen ta bort den här nivån från databasen?
+813=Mannen kan inte nå alla objekt
+814=Mannen kan inte nå alla mål
+815=Ogiltig spelplan
+816=Objekt: %d\r\nMål: %d\r\n
+817=Nivån är tom
+818=Nivån är för stor
+819=Det finns ingen man på den här nivån
+820=Det finns %d män på den här nivån
+730=Kan inte öppna filen, %s
+821=Kan inte öppna nivådatabasen.\r\nVill du hitta den?
+754=Läsfel i %s
+822=Databasen är tom
+823=Kunde inte läsa %d lösning%ar
+824=Det finns inget nivånummer
+825=Positionen är fel
+809=Det finns inget att spara
+
+826=Rekord
+827=Gratulerar!
+828=Föregående lösning: %d - %d\r\nNy lösning:       %d - %d\r\n
+
+;toolbar buttons
+1201=Början
+1202=Spola tillbaka
+1203=Tillbaka
+1204=Ett steg tillbaka
+1205=Paus
+1206=Ett steg framåt
+1207=Spela upp
+1208=Snabbt framåt
+1209=Slutet
+1210=Avsluta uppspelning
+1215=Ångra
+1104=Alternativ
+1106=Öppna position
+1107=Spara position
+1109=Byt spelare
+1112=Spela upp lösning
+1216=Upprepa
+1401=Nästa nivå
+1402=Föregående nivå
+1403=Öppna nivå
+1404=Återställ nivå
+1301=Öppna tema
+1302=Nästa tema
+1304=Uppdatera temat
