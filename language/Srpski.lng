@@ -1,6 +1,6 @@
 13=sokoban.chm
 
-;menu
+;meni
 600=&Igra
 601=&Jezik
 109=&Promjeni igraèa...\tTab
@@ -52,7 +52,7 @@
 350=&Sadržaj
 100=&O programu...
 
-;dialog boxes
+;polja za dijalog
 11=O Programu
 503=Verzija
 502=Ovaj program je besplatan!
@@ -68,6 +68,7 @@
 513=&centriraj prozor
 514=sakrij &zidove
 515=nevidljivi &objekti
+543=Radijus &vidljivosti objekta:
 516=Brzina &animacije:
 517=&Brzina snimka:
 518=Brzina &kratkog prikaza:
@@ -108,7 +109,7 @@
 804=Baza podataka za nivoe\0*.*\0
 805=Sokoban nivoi (*.xsb)\0*.xsb\0Text files (*.txt)\0*.txt\0All files\0*.*\0
 
-;error messages
+;poruke o greškama
 700=Nemože se kreirati bitmap za skin
 701=Pogešna velièina  bitmap-a 
 702=Nemože se uèitati BMP fajl
@@ -147,9 +148,9 @@
 
 826=Rezultati
 827=Èestitamo !
-828=Prethodno rešenje: %d - %d\r\nNovo rešenje:       %d - %d\r\n
+828=Prthodno rešenje: %d - %d\r\nNovo rešenje:       %d - %d\r\n
 
-;toolbar buttons
+;dugmad alatne trake
 1201=Poèetak
 1202=Premotavanje unapred
 1203=Premotavanje unazad
