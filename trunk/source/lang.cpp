@@ -25,6 +25,8 @@ char lang[64];         //language name
 char *langFile;        //lng file content (\n is replaced by \0)
 char *lngstr[MAXLNGSTR];    //pointers to rows in langFile
 char *lngNames[MAXLANG+1];  //all languages names
+bool isWin9X;
+UINT codePage;
 //-------------------------------------------------------------------------
 #define sizeA(A) (sizeof(A)/sizeof(*A))
 
@@ -101,6 +103,7 @@ static void fillPopup(HMENU h)
 	char *s;
 	HMENU sub;
 	MENUITEMINFO mii;
+	WCHAR buf[64];
 
 	for(i=GetMenuItemCount(h)-1; i>=0; i--){
 		id=GetMenuItemID(h, i);
@@ -126,9 +129,16 @@ static void fillPopup(HMENU h)
 				mii.fMask=MIIM_TYPE|MIIM_STATE;
 				mii.fType=MFT_STRING;
 				mii.fState=MFS_ENABLED;
-				mii.dwTypeData=s;
-				mii.cch= (UINT)strlen(s);
-				SetMenuItemInfo(h, i, TRUE, &mii);
+				if (codePage) {
+					mii.dwTypeData = reinterpret_cast<LPSTR>(buf);
+					MultiByteToWideChar(codePage, 0, s, -1, buf, sizeA(buf)-1);
+					SetMenuItemInfoW(h, i, TRUE, reinterpret_cast<MENUITEMINFOW*>(&mii));
+				}
+				else {
+					mii.dwTypeData = s;
+					mii.cch = (UINT)strlen(s);
+					SetMenuItemInfo(h, i, TRUE, &mii);
+				}
 			}
 		}
 	}
@@ -244,6 +254,7 @@ void scanLangDir()
 static void loadLang()
 {
 	memset(lngstr, 0, sizeof(lngstr));
+	codePage = 0;
 	char buf[256];
 	GetModuleFileName(0, buf, int(sizeof(buf)-strlen(lang)-14));
 	strcpy(cutPath(buf), "language\\");
@@ -265,6 +276,10 @@ static void loadLang()
 				msg(lng(754, "Error reading file %s"), fn);
 			}
 			else{
+				if(langFile[0]=='#' && langFile[1]=='C' && langFile[2]=='P' && !isWin9X){
+					codePage=atoi(langFile+3);
+					if(codePage == GetACP()) codePage=0;
+				}
 				langFile[len]='\n';
 				langFile[len+1]='\n';
 				langFile[len+2]='\0';
@@ -278,7 +293,7 @@ static void loadLang()
 int setLang(int cmd)
 {
 	if(cmd>=30000 && cmd<30000+MAXLANG && lngNames[cmd-30000]){
-		strcpy(lang, lngNames[cmd-30000]);
+		strncpy(lang, lngNames[cmd-30000], sizeof(lang)-1);
 		loadLang();
 		langChanged();
 		return 1;
@@ -288,6 +303,11 @@ int setLang(int cmd)
 //---------------------------------------------------------------------------
 void initLang()
 {
+	OSVERSIONINFO v;
+	v.dwOSVersionInfoSize= sizeof(OSVERSIONINFO);
+	GetVersionEx(&v);
+	isWin9X = v.dwPlatformId==VER_PLATFORM_WIN32_WINDOWS;
+
 	scanLangDir();
 	if(!lang[0]){
 		//language detection
@@ -299,6 +319,7 @@ void initLang()
 			case LANG_FRENCH: s="French"; break;
 			case LANG_ITALIAN: s= "Italiano"; break;
 			case LANG_POLISH: s="Polski"; break;
+			case LANG_RUSSIAN: s = "Russian"; break;
 			case LANG_SPANISH: s= "Spanish"; break;
 			case LANG_SERBIAN: s= "Srpski"; break;
 			case LANG_SWEDISH: s= "Swedish"; break;
