@@ -11,4 +11,4 @@ Classic Sokoban game for Windows. The goal of the game is to push all boxes to m
 
 You can **download** released binaries (EXE file) for Windows from [sourceforge.net](https://sourceforge.net/projects/sokobanp/).
 
-![screenshot](http://petr.lastovicka.sweb.cz/img/sokoban.png)
+![screenshot](https://plastovicka.github.io/img/sokoban.png)
