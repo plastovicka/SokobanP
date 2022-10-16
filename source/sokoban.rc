@@ -210,8 +210,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About"
 FONT 11, "MS Shell Dlg"
 BEGIN
-    PUSHBUTTON      "http://petr.lastovicka.sweb.cz",123,5,66,104,13
-    CTEXT           "(C) 2002-2015  Petr Lastovicka",501,4,50,105,10
+    PUSHBUTTON      "https://plastovicka.github.io",123,5,66,104,13
+    CTEXT           "(C) 2002-2022  Petr Lastovicka",501,4,50,105,10
     RTEXT           "Version",503,30,25,30,9
     CTEXT           "SokobanP",-1,36,6,40,9
     ICON            1,-1,15,20,20,20
@@ -354,7 +354,7 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,4,1,1
+ FILEVERSION 3,4,2,1
  PRODUCTVERSION 0,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
@@ -373,9 +373,9 @@ BEGIN
             VALUE "Comments", "\0"
             VALUE "CompanyName", " \0"
             VALUE "FileDescription", "SokobanP\0"
-            VALUE "FileVersion", "3.4\0"
+            VALUE "FileVersion", "3.4.2\0"
             VALUE "InternalName", "\0"
-            VALUE "LegalCopyright", "© 2003-2015  Petr Laštovièka\0"
+            VALUE "LegalCopyright", "© 2003-2022  Petr Laštovièka\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "sokoban.exe\0"
             VALUE "PrivateBuild", "\0"
